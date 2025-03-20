@@ -4,7 +4,7 @@
 2. 灵活自由的表对象设计方式，
 
 ## bin下载
-http://www.ieee.com
+http://www.ieeve.com
 
 账号：admin 密码：admin_123 
 
