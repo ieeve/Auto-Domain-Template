@@ -1,0 +1,32 @@
+﻿<Form Model="@model"
+	  LabelColSpan="8"
+	  OnFinish="SubmitForm"
+	  WrapperColSpan="16">
+	<Row Gutter="24">
+		@*
+        代码生成器会覆盖标记之间的内容。*@
+		@*CodeGenerator start*@
+		<GridCol Span="24">
+			<FormItem Label="@L["用户名"]">
+				<Input Disabled="!IsAdd" @bind-Value="@context.Id" />
+			</FormItem>
+		</GridCol>
+		<GridCol Span="24">
+			<FormItem Label="@L["说明"]">
+				<AntDesign.Input @bind-Value="@context.Notes" />
+			</FormItem>
+		</GridCol>
+		@*CodeGenerator end*@
+	</Row>
+	<FormItem>
+		<LabelTemplate></LabelTemplate>
+		<ChildContent>
+			<Button Loading="@btnLoading" Disabled="@btnLoading" HtmlType="submit" Type="@ButtonType.Primary">
+				@L["确定"]
+			</Button>
+			<Button OnClick="async()=>await ReturnAsync(null)">
+				@L["取消"]
+			</Button>
+		</ChildContent>
+	</FormItem>
+</Form>

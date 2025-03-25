@@ -1,0 +1,67 @@
+﻿@page "/Template/CodeTemplate/CodeTemplateTree"
+@using Modules.Core.Blazor.Components
+@using Modules.Template.Blazor.Pages.CodeTemplate.Components
+@using Modules.Template.Shared.CodeTemplate
+@inherits BasePage
+@attribute [Authorize]
+
+<PageTitle>@CurrentMenu.PageTitle @Modules.Core.Shared.AppConfig.GlobalConfig.SiteTitle</PageTitle>
+@if (!CurrentMenu.IsShow)
+{
+    <Result Title="@L["未授权访问。"]" />
+}
+else
+{
+    <GridRow Align="RowAlign.Middle" Style="height:48px;">
+        <GridCol Span="16">
+            @if (CurrentMenu.IsEdit)
+            {
+                <Button OnClick="@AddClick" Icon="@IconType.Outline.Plus" Type="ButtonType.Primary">@L["添加"]</Button>
+                <Button Size="@ButtonSize.Default" OnClick="()=>EditClick()" Icon="@IconType.Outline.Edit">@L["修改"]</Button>
+                <Button Size="@ButtonSize.Default" OnClick="()=>DelClick()" Danger Type="@ButtonType.Primary" Icon="@IconType.Outline.Delete">@L["删除"]</Button>
+            }
+        </GridCol>
+
+        <GridCol Span="8">
+            <div class="Table_Right_Tool">
+                <Badge Count="FilterCount"><Button Size="@ButtonSize.Small" Type="@ButtonType.Text" Icon="@IconType.Outline.Reload" OnClick="ResetTable">@L["刷新"]</Button></Badge>
+            </div>
+        </GridCol>
+    </GridRow>
+
+    <Table DefaultExpandAllRows="FilterCount>0"
+           RowClassName="@(x => x.Data.Row_CSS_Class)"
+           @ref="AntTable" Resizable
+           HidePagination
+           TreeChildren="item=>item.SqlsugarTreeChild"
+           ScrollY="@TableOptions.ScrollY"
+           Bordered="true"
+           Size=@TableSize.Small
+           TItem="CodeTemplateTreeVM"
+           DataSource="TableModel.DataSource"
+           @bind-SelectedRows="TableModel.SelectedRows"
+           Total="TableModel.TotalCount"
+           Loading="TableModel.Loading" OnChange="HandleTableChangeAsync">
+        @*<Selection CheckStrictly />*@
+        <Selection Type="SelectionType.Radio" />
+        @*
+    代码生成器会覆盖标记之间的内容。*@
+        @*CodeGenerator start*@
+        <AntDesign.PropertyColumn Property="c=>c.Id" Width="150" Sortable Filterable Ellipsis></AntDesign.PropertyColumn>
+        <AntDesign.PropertyColumn Property="c=>c.Username" Width="150" Sortable Filterable Ellipsis></AntDesign.PropertyColumn>
+        @*CodeGenerator end*@
+    </Table>
+    <GridRow Align="RowAlign.Middle" Style="height:40px;">
+        <GridCol Span="24"> <div style="font-size:16px;text-align:center">总计 @TableModel.TotalCount 项</div> </GridCol>
+    </GridRow>
+}
+<Modal Title="@Dialog.Title"
+       @bind-Visible="@Dialog.Visible"
+       Width="@Dialog.Width"
+       Draggable="@Dialog.Draggable"
+       DestroyOnClose
+       DragInViewport="@Dialog.DragInViewport"
+       Resizable="@Dialog.Resizable"
+       Footer="null">
+    <CodeTemplateTreeAdd model="@EditRow" IsAdd="@IsAdd" OnValueCallback="OnValueCallback"></CodeTemplateTreeAdd>
+</Modal>

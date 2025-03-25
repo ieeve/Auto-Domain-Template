@@ -1,0 +1,92 @@
+﻿@attribute [AllowAnonymous]
+@page "/Core/Install"
+@using Modules.Core.Blazor.Components
+@using Modules.Core.Blazor.Layouts;
+@using Modules.Core.Shared.AntDesign;
+@using Modules.Core.Shared.AppConfig
+
+<h2>创建或更新表结构,可重复生成，系统会对比哪些字段需要添加</h2>
+
+<Collapse DefaultActiveKey="@(new[]{"0"})"
+          ExpandIcon="caret-right">
+    <Panel Key="0">
+        <HeaderTemplate><b>1.请选择数据库</b></HeaderTemplate>
+        <ChildContent>
+            <Row Gutter="24">
+                <Col Span="12">
+                <DbSelect @bind-Value="@Dbid" OnSelectItemChanged="OnDbSelectChanged"></DbSelect>
+                </Col>
+                <Col Span="12">
+                <Button OnClick="()=>InitDbTable()" Loading="btnLoading" Icon="@IconType.Outline.Plus" Type="ButtonType.Primary">同步数据表结构</Button>
+                </Col>
+            </Row>
+        </ChildContent>
+    </Panel>
+    <Panel Header="基础表" Key="1">
+        <ExtraTemplate>
+            <div @onclick:stopPropagation>
+                <Checkbox @bind-Value="@Entities_baseChecked" OnChange="Entities_base_CheckChanged">
+                    选择全部
+                </Checkbox>
+            </div>
+        </ExtraTemplate>
+        <ChildContent>
+            <Card>
+                @foreach (var item in Entities_base)
+                {
+                    <CardGrid Style="width:20%;text-align:center" Hoverable="true">
+                        <Checkbox @bind-Value="item.IsCreate">
+                            @item.EntityName
+                        </Checkbox>
+                    </CardGrid>
+                }
+            </Card>
+        </ChildContent>
+    </Panel>
+    <Panel Header="MES系统表" Key="2">
+        <ExtraTemplate>
+            <div @onclick:stopPropagation>
+                <Checkbox @bind-Value="@Entities_MES_coreChecked" OnChange="Entities_MES_core_CheckChanged">
+                    选择全部
+                </Checkbox>
+            </div>
+        </ExtraTemplate>
+        <ChildContent>
+            <Card>
+                @foreach (var item in Entities_MES_core)
+                {
+                    <CardGrid Style="width:20%;text-align:center" Hoverable="true">
+                        <Checkbox @bind-Value="item.IsCreate">
+                            @item.EntityName
+                        </Checkbox>
+                    </CardGrid>
+                }
+            </Card>
+        </ChildContent>
+    </Panel>
+    <Panel Header="重工表" Key="4">
+        <ExtraTemplate>
+            <div @onclick:stopPropagation>
+                <Checkbox @bind-Value="@Entities_ZXZGChecked" OnChange="Entities_ZXZG_CheckChanged">
+                    选择全部
+                </Checkbox>
+            </div>
+        </ExtraTemplate>
+        <ChildContent>
+            <Card>
+                @foreach (var item in Entities_ZXZG)
+                {
+                    <CardGrid Style="width:20%;text-align:center" Hoverable="true">
+                        <Checkbox @bind-Value="item.IsCreate">
+                            @item.EntityName
+                        </Checkbox>
+                    </CardGrid>
+                }
+            </Card>
+        </ChildContent>
+    </Panel>
+</Collapse>
+<br />
+@code {
+
+}

@@ -1,0 +1,19 @@
+下载地址：
+https://github.com/FiloSottile/mkcert/releases
+安装方法:
+https://blog.csdn.net/qq_45392321/article/details/119676301
+
+
+正确方法如下：
+1、生成证书
+
+mkcert-v1.4.4-windows-amd64.exe localhost 127.0.0.1 ::1 10.17.24.160
+2、安装证书
+
+mkcert-v1.4.4-windows-amd64.exe -install
+3、把mkcert-v1.4.4-windows-amd64.exe目录中生成的证书www.aaa.com+5.pem和www.aaa.com+5-key.pem拷贝到nginx的目录中。
+
+4、找到生成的证书
+mkcert-v1.4.4-windows-amd64.exe -CAROOT
+
+将rootCA.pem拷贝一个副本，并命名为rootCA.crt(因为 windows 并不识别pem扩展名，并且 Ubuntu 也不会将pem扩展名作为 CA 证书文件对待)，将rootCA.crt文件分发给其他用户，按doc文档说明手工导入

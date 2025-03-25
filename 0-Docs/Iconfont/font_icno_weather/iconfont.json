@@ -1,0 +1,93 @@
+{
+  "id": "2699269",
+  "name": "气象",
+  "font_family": "icon_weather",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2777895",
+      "name": "简易雨量站",
+      "font_class": "jianyiyuliangzhan",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "5873758",
+      "name": "气压",
+      "font_class": "qiya",
+      "unicode": "e7fb",
+      "unicode_decimal": 59387
+    },
+    {
+      "icon_id": "6677860",
+      "name": "风速",
+      "font_class": "fengsu1",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "6677872",
+      "name": "气压",
+      "font_class": "qiya1",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "6677873",
+      "name": "湿度",
+      "font_class": "shidu",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "11994834",
+      "name": "海温场",
+      "font_class": "haiwenchang",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "12331688",
+      "name": "温度",
+      "font_class": "wendu",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "13636960",
+      "name": "风速",
+      "font_class": "fengsu2",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "13804983",
+      "name": "风速",
+      "font_class": "fengsu3",
+      "unicode": "e782",
+      "unicode_decimal": 59266
+    },
+    {
+      "icon_id": "13804987",
+      "name": "风向",
+      "font_class": "fengxiang1",
+      "unicode": "e783",
+      "unicode_decimal": 59267
+    },
+    {
+      "icon_id": "13805010",
+      "name": "温度",
+      "font_class": "wendu1",
+      "unicode": "e788",
+      "unicode_decimal": 59272
+    },
+    {
+      "icon_id": "14002555",
+      "name": "湿度",
+      "font_class": "shidu1",
+      "unicode": "e78b",
+      "unicode_decimal": 59275
+    }
+  ]
+}

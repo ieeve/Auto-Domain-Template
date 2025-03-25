@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Modules.Tasks.AppServices": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:9231;http://localhost:9232"
+    }
+  }
+}

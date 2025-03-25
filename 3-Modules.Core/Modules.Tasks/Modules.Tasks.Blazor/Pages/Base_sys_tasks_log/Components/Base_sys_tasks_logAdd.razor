@@ -1,0 +1,50 @@
+@inherits BasePage
+<Form Model="@model"
+      LabelColSpan="8"
+      OnFinish="SubmitForm"
+      WrapperColSpan="16">
+    <Row Gutter="24">
+        @*
+        代码生成器会覆盖标记之间的内容。*@
+        @*CodeGenerator start*@
+    <GridCol Span="24">
+    <FormItem Label="任务ID">
+    <AntDesign.Input @bind-Value="@context.Task_id" /> 
+    </FormItem>
+    </GridCol>
+    <GridCol Span="24">
+    <FormItem Label="应用程序ID">
+    <AntDesign.Input @bind-Value="@context.App_id" /> 
+    </FormItem>
+    </GridCol>
+    <GridCol Span="24">
+    <FormItem Label="日志类型">
+    <AntDesign.Input @bind-Value="@context.Log_type" /> 
+    </FormItem>
+    </GridCol>
+    <GridCol Span="24">
+    <FormItem Label="时间">
+    <AntDesign.DatePicker ShowTime="@true" @bind-Value="@context.Log_time" /> 
+    </FormItem>
+    </GridCol>
+    <GridCol Span="24">
+    <FormItem Label="内容">
+    <AntDesign.TextArea @bind-Value="@context.Log_text" /> 
+    </FormItem>
+    </GridCol>
+    <GridCol Span="24">
+    <FormItem Label="执行时间">
+    <AntDesign.Input @bind-Value="@context.Milliseconds" /> 
+    </FormItem>
+    </GridCol>
+@*CodeGenerator end*@
+    </Row>
+    <FormItem WrapperColOffset="8" WrapperColSpan="16">
+        <Button Loading="@btnLoading" Disabled="@btnLoading" HtmlType="submit" Type="@ButtonType.Primary">
+            确定
+        </Button>
+        <Button OnClick="async()=>await ReturnAsync(false)">
+            取消
+        </Button>
+    </FormItem>
+</Form>

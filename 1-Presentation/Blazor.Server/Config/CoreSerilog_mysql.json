@@ -1,0 +1,52 @@
+{
+  "Serilog": {
+    "MinimumLevel": {
+      "Default": "Warning",
+      "Override": {
+        "Microsoft": "Warning",
+        "Microsoft.Hosting.Lifetime": "Warning",
+        "System": "Warning",
+        "System.Net.Http.HttpClient": "Warning"
+      }
+    },
+    "Using": [ "Serilog.Enrichers.ClientInfo" ],
+    "Enrich": [ "WithClientIp", "WithClientAgent" ],
+    "Properties": {
+      "Application": "AspNetCore5.0"
+    },
+    "WriteTo": [
+      {
+        "Name": "MySQL",
+        "Args": {
+          "connectionString": "Server=*.*.*.*;Database=domain_model;Uid=domain_model;Pwd=*;",
+          "tableName": "base_sys_exceptions_logs",
+          "restrictedToMinimumLevel": "Information",
+          "columnOptionsSection": {
+            "primaryKeyColumnName": "Id",
+            "addStandardColumns": [ "LogEvent", "SourceContext" ],
+            "additionalColumns": [
+              {
+                "ColumnName": "ClientIP",
+                "PropertyName": "ClientIp",
+                "DataType": "nvarchar"
+
+              },
+              {
+                "ColumnName": "UserName",
+                "PropertyName": "UserName",
+                "DataType": "nvarchar"
+
+              },
+              {
+                "ColumnName": "ClientAgent",
+                "PropertyName": "ClientAgent",
+                "DataType": "nvarchar"
+
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

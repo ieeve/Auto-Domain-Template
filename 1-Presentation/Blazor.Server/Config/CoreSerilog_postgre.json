@@ -1,0 +1,45 @@
+{
+  "Serilog": {
+    "Using": [ "Serilog.Sinks.PostgreSQL.Configuration" ],
+    "MinimumLevel": "Debug",
+    "Enrich": [ "WithMachineName" ],
+    "WriteTo": [
+      {
+        "Name": "PostgreSQL",
+        "Args": {
+          "connectionString": "LogsDb",
+          "tableName": "base_sys_exceptions_logs",
+          "needAutoCreateTable": true
+        }
+      }
+    ]
+  },
+  "ConnectionStrings": {
+    "LogsDb": "User ID=postgres;Password=TAIWAN;Host=*.*.*.*;Port=55432;Database=*"
+  },
+  "Columns": {
+    "message": "RenderedMessageColumnWriter",
+    "message_template": "MessageTemplateColumnWriter",
+    "level": {
+      "Name": "LevelColumnWriter",
+      "Args": {
+        "renderAsText": true,
+        "dbType": "Varchar"
+      }
+    },
+    "raise_date": "TimestampColumnWriter",
+    "exception": "ExceptionColumnWriter",
+    "properties": "LogEventSerializedColumnWriter",
+    "props_test": {
+      "Name": "PropertiesColumnWriter",
+      "Args": { "dbType": "Json" }
+    },
+    "machine_name": {
+      "Name": "SinglePropertyColumnWriter",
+      "Args": {
+        "propertyName": "MachineName",
+        "writeMethod": "Raw"
+      }
+    }
+  }
+}

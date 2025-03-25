@@ -1,0 +1,17 @@
+{
+    "DbConfig": [
+        {
+            "ID": "Sqlite",
+            "Name": "Sqlite数据库",
+            "DbServeIP": "",
+            "DbType": 2,
+            "DbUsername": "",
+            "DbPassword": "",
+            "DbName": "",
+            "SqliteFilePath": "../Data/Data.db", 
+            "IsDefault": true,
+            "IsReadOnly": false,
+            "Tenant_id": "1675477064234438656"
+        }
+    ]
+}

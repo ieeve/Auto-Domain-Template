@@ -1,0 +1,1 @@
+global using Modules.Tasks.Repository.Base;

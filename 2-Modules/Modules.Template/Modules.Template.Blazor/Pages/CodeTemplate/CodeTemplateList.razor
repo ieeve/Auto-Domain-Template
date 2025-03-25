@@ -1,0 +1,125 @@
+﻿@page "/Template/CodeTemplate/CodeTemplateList"
+@using Modules.Core.Blazor.Components
+@using Modules.Core.Blazor.Pages.ObjectData.Components
+@using Modules.Template.Blazor.Pages.CodeTemplate.Components
+@using Modules.Template.Shared.CodeTemplate
+@inherits BasePage
+@attribute [Authorize]
+
+<PageTitle>@CurrentMenu.PageTitle @Modules.Core.Shared.AppConfig.GlobalConfig.SiteTitle</PageTitle>
+@if (!CurrentMenu.IsShow)
+{
+    <Result Title="@L["未授权访问"]" />
+}
+else
+{
+    <GridRow Align="RowAlign.Middle" Style="height:48px;">
+        <GridCol Span="16">
+            @if (CurrentMenu.IsEdit || TableDataModel.TableOptions.IsEdit)
+            {
+                <Button OnClick="@AddClick" Icon="@IconType.Outline.Plus" Type="ButtonType.Primary">@L["添加"]</Button>
+            }
+            <ObjectDataExportExcel ExportDataClick="ExportExcelClick"></ObjectDataExportExcel>
+        </GridCol>
+
+        <GridCol Span="8">
+            <div class="Table_Right_Tool">
+                <Badge Count="FilterCount"><Button Type="@ButtonType.Text" Size="@ButtonSize.Small" Icon="@IconType.Outline.Reload" OnClick="@ResetTable">@L["刷新"]</Button></Badge>
+                @if (CurrentMenu.IsEdit || TableDataModel.TableOptions.IsEdit)
+                {
+                    <Button Type="@ButtonType.Text" Size="@ButtonSize.Small" Icon="@IconType.Outline.Delete" OnClick="@BatchDelClick">@L["批量"]</Button>
+                    <Button Size="@ButtonSize.Small" Type="@ButtonType.Text" Icon="@IconType.Outline.Edit">@L["批量"]</Button>
+                }
+                <Button Type="@ButtonType.Text" Size="@ButtonSize.Small" Icon="@IconType.Outline.Setting" OnClick="@SettingTable">@L["设置"]</Button>
+            </div>
+        </GridCol>
+    </GridRow>
+    @if (!TableDataModel.IsValid())
+    {
+        <div style="text-align: center; padding: 30px 50px;">
+            <Spin />
+        </div>
+    }
+    else
+    {
+        <Table RowClassName="@(x => x.Data.Row_CSS_Class)"
+               ScrollY="@TableDataModel.TableOptions.ScrollY" Bordered="true"
+               Resizable
+               RowKey="s=>s.Id"
+               Size=@TableSize.Small
+               TItem="CodeTemplateVM"
+               DataSource="TableDataModel.TableModel.DataSource"
+               @bind-PageIndex="TableDataModel.TableModel.PageIndex"
+               @bind-PageSize="TableDataModel.TableModel.PageSize"
+               @bind-SelectedRows="TableDataModel.TableModel.SelectedRows"
+               Total="TableDataModel.TableModel.TotalCount"
+               Loading="TableDataModel.TableModel.Loading"
+               OnChange="HandleTableChange" RemoteDataSource>
+            <ChildContent>
+                <PropertyColumn Property="c=>c.Row_no" Width="50" Title="" />
+                <Selection Type="SelectionType.Checkbox" />
+                @if (CurrentMenu.IsEdit || TableDataModel.TableOptions.IsEdit)
+                {
+                    <ActionColumn Title="@L["操作"]" Width="70">
+                        <Space Size="@("1px")">
+                            <SpaceItem>
+                                <Button Size="@ButtonSize.Small" OnClick="()=>EditClick(context)" Type="@ButtonType.Link" Icon="@IconType.Outline.Edit" />
+                            </SpaceItem>
+                            <SpaceItem>
+                                <Button Size="@ButtonSize.Small" OnClick="()=>DelClickAsync(context)" Type="@ButtonType.Link" Icon="@IconType.Outline.Delete" />
+                            </SpaceItem>
+                        </Space>
+                    </ActionColumn>
+                }
+                @foreach (var column in TableDataModel.ColumnHeaderModels)
+                {
+
+                    <AntDesign.Column TData="object" Hidden="@column.isHidden" OnHeaderCell="@(()=>(new Dictionary<string, object>() {{"style","background-color:" +@column.bgcolor+";" }}))" Width="@column.width.ToString()" Ellipsis="@TableDataModel.TableOptions.Ellipsis" Sortable DataIndex=@($"{column.field}")>
+                        <TitleTemplate>
+                            <div @onclick:stopPropagation="true">
+                                <Input Placeholder="@column.title" AllowClear="true" @bind-Value="@column.search" OnChange="(e)=>OnInputClearChange(e,column.field)" TValue="string" />
+                            </div>
+                        </TitleTemplate>
+                        <CellRender Context="cell">
+                            @*  @if (column.field.ToLower() == "title")
+                            {
+                                <a onclick="@(()=>ShowDetailClickAsync(@context))">@cell.FieldValue</a>
+                            }
+                            else *@
+
+                            <ObjectDataColumn Column="@column" EnumDataList="TableDataModel.EnumDataList" ColumnValue="@cell.FieldValue?.ToString()"></ObjectDataColumn>
+
+                        </CellRender>
+                    </AntDesign.Column>
+                }
+            </ChildContent>
+            <PaginationTemplate>
+                <Pagination Style="text-align:center;line-height:38px;"
+                            Total="context.Total"
+                            Size="PaginationSize.Small"
+                            ShowTotal=showTotal
+                            PageSize="context.PageSize"
+                            Current="context.PageIndex"
+                            OnChange="context.HandlePageChange"
+                            PageSizeOptions="TableDataModel.TableOptions.PageSizeOptions" />
+            </PaginationTemplate>
+        </Table>
+    }
+}
+<Modal Title="@Dialog.Title"
+       @bind-Visible="@Dialog.Visible"
+       Width="@Dialog.Width"
+       Draggable="@Dialog.Draggable"
+       DestroyOnClose
+       Resizable="@Dialog.Resizable"
+       DragInViewport="@Dialog.DragInViewport"
+       Footer="null">
+    <CodeTemplateAdd model="@EditRow" IsAdd="@IsAdd" OnValueCallback="OnValueCallback"></CodeTemplateAdd>
+</Modal>
+@*用户自定义列宽度*@
+<Modules.Core.Blazor.Components.UserColumnSetting TableOptions="TableDataModel.TableOptions" ColumnHeaders="@TableDataModel.ColumnHeaderModels" UserColumnDrawerVisible="@userColumnDrawerVisible" OnValueCallback="@OnUserColumnDrawerCallbackAsync"></Modules.Core.Blazor.Components.UserColumnSetting>
+@code
+{
+    Func<PaginationTotalContext, string> showTotal = ctx => $"总计 {ctx.Total} 项";
+    // L["Branch to: {{branchQuestionName}}"]
+}

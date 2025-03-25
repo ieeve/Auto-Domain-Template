@@ -1,0 +1,921 @@
+﻿{
+  "工作台": {
+    "en-US": "Workbench",
+    "zh-CN": "工作台",
+    "ko-KR": "워크 벤치",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "仪表盘": {
+    "en-US": "Dashboard",
+    "zh-CN": "仪表盘",
+    "ko-KR": "계기반",
+    "de-DE": "Armaturenbrett",
+    "ru-RU": "Панель приборов",
+    "fr-FR": "Tableau de bord",
+    "ja-JP": "ダッシュボード"
+  },
+  "任务中心": {
+    "en-US": "Task Center",
+    "zh-CN": "任务中心",
+    "ko-KR": "미션 센터",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "类别管理": {
+    "en-US": "Category Management",
+    "zh-CN": "类别管理",
+    "ko-KR": "범주 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "任务看板": {
+    "en-US": "Task Dashboard",
+    "zh-CN": "任务看板",
+    "ko-KR": "임무판",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "重点任务": {
+    "en-US": "Key tasks",
+    "zh-CN": "重点任务",
+    "ko-KR": "주요 임무",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "作业指导书": {
+    "en-US": "working instruction",
+    "zh-CN": "作业指导书",
+    "ko-KR": "숙제 지도서",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "作业指导任务下达": {
+    "en-US": "Assignment guidance task assignment",
+    "zh-CN": "作业指导任务下达",
+    "ko-KR": "작업 지도 임무 하달",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "部门日志": {
+    "en-US": "Department log",
+    "zh-CN": "部门日志",
+    "ko-KR": "부서 로그",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "物料类别": {
+    "en-US": "Material category",
+    "zh-CN": "物料类别",
+    "ko-KR": "항목 범주",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "转交记录": {
+    "en-US": "Transfer records",
+    "zh-CN": "转交记录",
+    "ko-KR": "기록 회부",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "扫码接收": {
+    "en-US": "Scan code to receive",
+    "zh-CN": "扫码接收",
+    "ko-KR": "받을 QR 코드를 스캔합니다",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "扫码转出": {
+    "en-US": "Scan the code to transfer out",
+    "zh-CN": "扫码转出",
+    "ko-KR": "코드를 스캔하여 전송합니다",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "BOM变更记录": {
+    "en-US": "BOM Change Record",
+    "zh-CN": "BOM变更记录",
+    "ko-KR": "BOM 변경 내역",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "市场材料分配": {
+    "en-US": "Market material allocation",
+    "zh-CN": "市场材料分配",
+    "ko-KR": "시장 재료의 분류",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "采购计划维护": {
+    "en-US": "Procurement Plan Maintenance",
+    "zh-CN": "采购计划维护",
+    "ko-KR": "조달 프로그램 유지 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "采购监控平台": {
+    "en-US": "Procurement monitoring platform",
+    "zh-CN": "采购监控平台",
+    "ko-KR": "구매 모니터링 플랫폼",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "采购合同管理": {
+    "en-US": "Procurement Contract Management",
+    "zh-CN": "采购合同管理",
+    "ko-KR": "조달 계약 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "市场价格跟踪": {
+    "en-US": "Market price tracking",
+    "zh-CN": "市场价格跟踪",
+    "ko-KR": "시장 가격 추적",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "工厂物料维护": {
+    "en-US": "Factory material maintenance",
+    "zh-CN": "工厂物料维护",
+    "ko-KR": "식물 재료 유지 보수",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "市场材料维护": {
+    "en-US": "Market material maintenance",
+    "zh-CN": "市场材料维护",
+    "ko-KR": "시장 자재의 유지 보수",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "BBM采集": {
+    "en-US": "BBM collection",
+    "zh-CN": "BBM采集",
+    "ko-KR": "BBM 중앙 집중식 조달",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "物料明细": {
+    "en-US": "Material Details",
+    "zh-CN": "物料明细",
+    "ko-KR": "항목 세부 정보",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "供方名录": {
+    "en-US": "Supplier List",
+    "zh-CN": "供方名录",
+    "ko-KR": "공급업체 디렉토리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "SRM系统": {
+    "en-US": "SRM system",
+    "zh-CN": "SRM系统",
+    "ko-KR": "SRM 시스템",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "反馈中心": {
+    "en-US": "Feedback Center",
+    "zh-CN": "反馈中心",
+    "ko-KR": "피드백 허브",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "路线编码": {
+    "en-US": "Route code",
+    "zh-CN": "路线编码",
+    "ko-KR": "경로 코딩",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "物料路线": {
+    "en-US": "Material Route",
+    "zh-CN": "物料路线",
+    "ko-KR": "재료 라우팅",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "路线版本": {
+    "en-US": "Route version",
+    "zh-CN": "路线版本",
+    "ko-KR": "경로 버전",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "工艺导入": {
+    "en-US": "Process import",
+    "zh-CN": "工艺导入",
+    "ko-KR": "프로세스 가져오기",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "数据导入": {
+    "en-US": "Data Import",
+    "zh-CN": "数据导入",
+    "ko-KR": "데이터 가져오기",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "生产制造": {
+    "en-US": "Manufacturing",
+    "zh-CN": "生产制造",
+    "ko-KR": "제조",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "机床看板": {
+    "en-US": "Machine Tool Dashboard",
+    "zh-CN": "机床看板",
+    "ko-KR": "기계 칸반",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "工序加工记录": {
+    "en-US": "Process Processing Record",
+    "zh-CN": "工序加工记录",
+    "ko-KR": "프로세스 처리 레코드",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "工序排产计划": {
+    "en-US": "Process scheduling plan",
+    "zh-CN": "工序排产计划",
+    "ko-KR": "작업 스케줄링",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "机床维护日志": {
+    "en-US": "Machine maintenance log",
+    "zh-CN": "机床维护日志",
+    "ko-KR": "기계 유지 관리 로그",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "计划调整记录": {
+    "en-US": "Plan adjustment record",
+    "zh-CN": "计划调整记录",
+    "ko-KR": "레코드 조정 계획",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "计划数据": {
+    "en-US": "planning data",
+    "zh-CN": "计划数据",
+    "ko-KR": "데이터 계획",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "设备分类": {
+    "en-US": "equipment classification",
+    "zh-CN": "设备分类",
+    "ko-KR": "장치 분류",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "工作日历": {
+    "en-US": "Working Calendar",
+    "zh-CN": "工作日历",
+    "ko-KR": "근무 일정",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "设备地图": {
+    "en-US": "Equipment map",
+    "zh-CN": "设备地图",
+    "ko-KR": "장치 맵",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "基础数据": {
+    "en-US": "Basic data",
+    "zh-CN": "基础数据",
+    "ko-KR": "기본 데이터",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "BOM明细": {
+    "en-US": "BOM Details",
+    "zh-CN": "BOM明细",
+    "ko-KR": "BOM 세부정보",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "NCR报告": {
+    "en-US": "NCR Report",
+    "zh-CN": "NCR报告",
+    "ko-KR": "NCR 리포트",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "设备需求": {
+    "en-US": "Equipment requirements",
+    "zh-CN": "设备需求",
+    "ko-KR": "장비 요구 사항",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "工装刀具": {
+    "en-US": "Tooling Tools",
+    "zh-CN": "工装刀具",
+    "ko-KR": "툴링 도구",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "路线定义": {
+    "en-US": "Route definition",
+    "zh-CN": "路线定义",
+    "ko-KR": "경로 정의",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "工艺明细": {
+    "en-US": "Process Details",
+    "zh-CN": "工艺明细",
+    "ko-KR": "프로세스 세부 정보",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "工艺清单": {
+    "en-US": "Process List",
+    "zh-CN": "工艺清单",
+    "ko-KR": "프로세스 목록",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "工艺BOM": {
+    "en-US": "Process BOM",
+    "zh-CN": "工艺BOM",
+    "ko-KR": "프로세스 BOM",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "班组人员": {
+    "en-US": "Team members",
+    "zh-CN": "班组人员",
+    "ko-KR": "승무원",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "企业建模": {
+    "en-US": "Enterprise modeling",
+    "zh-CN": "企业建模",
+    "ko-KR": "엔터프라이즈 모델링",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "人员管理": {
+    "en-US": "Personnel management",
+    "zh-CN": "人员管理",
+    "ko-KR": "인력 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "班组定义": {
+    "en-US": "Team definition",
+    "zh-CN": "班组定义",
+    "ko-KR": "그룹 정의",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "MES系统": {
+    "en-US": "MES system",
+    "zh-CN": "MES系统",
+    "ko-KR": "MES 시스템",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "物料管理": {
+    "en-US": "Material Management",
+    "zh-CN": "物料管理",
+    "ko-KR": "자재 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  
+  "BOM管理": {
+    "en-US": "BOM Management",
+    "zh-CN": "BOM管理",
+    "ko-KR": "BOM 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "项目管理": {
+    "en-US": "Project Management",
+    "zh-CN": "项目管理",
+    "ko-KR": "프로젝트 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "工艺管理": {
+    "en-US": "Process management",
+    "zh-CN": "工艺管理",
+    "ko-KR": "공정 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "质量管理": {
+    "en-US": "Quality Management",
+    "zh-CN": "质量管理",
+    "ko-KR": "품질 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "APS排程": {
+    "en-US": "APS scheduling",
+    "zh-CN": "APS排程",
+    "ko-KR": "APS 스케줄링",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "WMS仓储": {
+    "en-US": "WMS warehousing",
+    "zh-CN": "WMS仓储",
+    "ko-KR": "WMS 창고",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "库存管理": {
+    "en-US": "Inventory management",
+    "zh-CN": "库存管理",
+    "ko-KR": "재고 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "物料入库": {
+    "en-US": "Material storage",
+    "zh-CN": "物料入库",
+    "ko-KR": "재료 입고",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "入库流水": {
+    "en-US": "Warehouse entry record",
+    "zh-CN": "入库流水",
+    "ko-KR": "입고유수",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "出库流水": {
+    "en-US": "Outbound flow",
+    "zh-CN": "出库流水",
+    "ko-KR": "출고 유수",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "系统管理": {
+    "en-US": "System management",
+    "zh-CN": "系统管理",
+    "ko-KR": "시스템 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "部门管理": {
+    "en-US": "Department management",
+    "zh-CN": "部门管理",
+    "ko-KR": "부서 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "用户管理": {
+    "en-US": "User Management",
+    "zh-CN": "用户管理",
+    "ko-KR": "사용자 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "菜单管理": {
+    "en-US": "Menu management",
+    "zh-CN": "菜单管理",
+    "ko-KR": "메뉴 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "角色管理": {
+    "en-US": "Role management",
+    "zh-CN": "角色管理",
+    "ko-KR": "역할 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "看板管理": {
+    "en-US": "Kanban management",
+    "zh-CN": "看板管理",
+    "ko-KR": "판넬 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "任务管理": {
+    "en-US": "Task management",
+    "zh-CN": "任务管理",
+    "ko-KR": "임무 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "对象管理": {
+    "en-US": "Object management",
+    "zh-CN": "对象管理",
+    "ko-KR": "객체 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "对象实体": {
+    "en-US": "Object entity",
+    "zh-CN": "对象实体",
+    "ko-KR": "객체 엔티티",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "视图管理": {
+    "en-US": "View management",
+    "zh-CN": "视图管理",
+    "ko-KR": "뷰 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "对象事件": {
+    "en-US": "Object Event",
+    "zh-CN": "对象事件",
+    "ko-KR": "객체 이벤트",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "属性管理": {
+    "en-US": "Attribute Management",
+    "zh-CN": "属性管理",
+    "ko-KR": "속성 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "枚举管理": {
+    "en-US": "Enumeration management",
+    "zh-CN": "枚举管理",
+    "ko-KR": "열거 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "日志管理": {
+    "en-US": "Log management",
+    "zh-CN": "日志管理",
+    "ko-KR": "로그 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "删除记录": {
+    "en-US": "Delete records",
+    "zh-CN": "删除记录",
+    "ko-KR": "레코드 삭제",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "修改记录": {
+    "en-US": "Modify records",
+    "zh-CN": "修改记录",
+    "ko-KR": "레코드 수정",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "计划任务日志": {
+    "en-US": "Plan Task Log",
+    "zh-CN": "计划任务日志",
+    "ko-KR": "예약된 작업 로그",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "系统异常记录": {
+    "en-US": "System exception record",
+    "zh-CN": "系统异常记录",
+    "ko-KR": "시스템 예외 기록",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "站点管理": {
+    "en-US": "Site management",
+    "zh-CN": "站点管理",
+    "ko-KR": "사이트 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "系统配置": {
+    "en-US": "System configuration",
+    "zh-CN": "系统配置",
+    "ko-KR": "시스템 구성",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "租户管理": {
+    "en-US": "Tenant Management",
+    "zh-CN": "租户管理",
+    "ko-KR": "세입자 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "租户配置": {
+    "en-US": "Tenant Configuration",
+    "zh-CN": "租户配置",
+    "ko-KR": "세입자 구성",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "数据库配置": {
+    "en-US": "Database configuration",
+    "zh-CN": "数据库配置",
+    "ko-KR": "데이터베이스 구성",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "数据表同步": {
+    "en-US": "Data table synchronization",
+    "zh-CN": "数据表同步",
+    "ko-KR": "데이터 테이블 동기화",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "代码生成": {
+    "en-US": "Code generation",
+    "zh-CN": "代码生成",
+    "ko-KR": "코드 생성",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "API列表": {
+    "en-US": "API List",
+    "zh-CN": "API列表",
+    "ko-KR": "API 목록",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "BBM 集采": {
+    "en-US": "BBM centralized procurement",
+    "zh-CN": "BBM集采",
+    "ko-KR": "BBM 수집",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "解决方案": {
+    "en-US": "Solution",
+    "zh-CN": "解决方案",
+    "ko-KR": "솔루션",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "模块管理": {
+    "en-US": "Module management",
+    "zh-CN": "模块管理",
+    "ko-KR": "모듈 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "市场材料分类": {
+    "en-US": "Classification of Market Materials",
+    "zh-CN": "市场材料分类",
+    "ko-KR": "시장 자료 분류",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "生产BOM": {
+    "en-US": "Production BOM",
+    "zh-CN": "生产BOM",
+    "ko-KR": "프로덕션 BOM",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "装配BOM": {
+    "en-US": "Assembly BOM",
+    "zh-CN": "装配BOM",
+    "ko-KR": "BOM 어셈블",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "工作命令": {
+    "en-US": "Work orders",
+    "zh-CN": "工作命令",
+    "ko-KR": "작업 명령",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "产品信息": {
+    "en-US": "Product Information",
+    "zh-CN": "产品信息",
+    "ko-KR": "제품 정보",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "工单管理": {
+    "en-US": "Work order management",
+    "zh-CN": "工单管理",
+    "ko-KR": "작업 명세서 관리",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "导航菜单地址不能为空！": {
+    "en-US": "The navigation menu address cannot be empty!",
+    "zh-CN": "导航菜单地址不能为空！",
+    "ko-KR": "",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  }
+}

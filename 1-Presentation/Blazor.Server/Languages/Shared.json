@@ -1,0 +1,38 @@
+﻿{
+  "请填写内容": {
+    "en-US": "Please fill in the content",
+    "zh-CN": "请填写内容",
+    "ko-KR": "",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "确定": {
+    "en-US": "OK",
+    "zh-CN": "确定",
+    "ko-KR": "",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "取消": {
+    "en-US": "Cancel",
+    "zh-CN": "取消",
+    "ko-KR": "",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  },
+  "未授权访问": {
+    "en-US": "Unauthorized access",
+    "zh-CN": "未授权访问",
+    "ko-KR": "",
+    "de-DE": "",
+    "ru-RU": "",
+    "fr-FR": "",
+    "ja-JP": ""
+  }
+}

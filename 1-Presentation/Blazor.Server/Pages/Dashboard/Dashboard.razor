@@ -1,0 +1,54 @@
+﻿@page "/"
+@page "/Dashboard"
+@using System.Text.RegularExpressions;
+@using Modules.Core.Blazor.Pages.Base_kanban.Components
+@using Modules.Core.Blazor.Pages.Base_user_favorite
+@using Modules.Core.Blazor.Pages.Base_user_notice
+@using Modules.Core.Shared.Base_sys_menu;
+@attribute [Authorize]
+<PageTitle>我的工作台 @Modules.Core.Shared.AppConfig.GlobalConfig.SiteTitle</PageTitle>
+<br />
+<Base_kanbanBox></Base_kanbanBox>
+
+<Collapse DefaultActiveKey="@(new[]{"1"})">
+    <Panel Header="我的任务" Key="1">
+        <ChildContent>
+            <Base_user_noticeBox></Base_user_noticeBox>
+        </ChildContent>
+        <ExtraTemplate>
+            <div @onclick:stopPropagation="true">
+                <a target="_blank" href="/Core/Base_user_notice/Base_user_noticeList">
+                    <Icon Type="setting" Theme="IconThemeType.Outline" />更多
+                </a>
+            </div>
+        </ExtraTemplate>
+    </Panel>
+</Collapse>
+<br />
+<Collapse DefaultActiveKey="@(new[]{"1"})">
+    <Panel Header="我的工具" Key="1">
+        <ChildContent>
+            <User_favorite_menuBox></User_favorite_menuBox>
+        </ChildContent>
+        <ExtraTemplate>
+            <div @onclick:stopPropagation="true">
+                <a target="_blank" href="/Core/Base_user_favorite/Base_user_favorite">
+                <Icon Type="setting" Theme="IconThemeType.Outline" />设置
+                </a></div>
+        </ExtraTemplate>
+    </Panel>
+</Collapse>
+
+<br />
+
+<Collapse>
+    <Panel Header="我的菜单" Key="1">
+        <ChildContent>
+            <Modules.Core.Blazor.Pages.Base_user_menus.User_all_menuBox></Modules.Core.Blazor.Pages.Base_user_menus.User_all_menuBox>
+        </ChildContent>
+        <ExtraTemplate>
+           @*  <div @onclick:stopPropagation="true"><Search Placeholder="搜索菜单" EnterButton="true" /></div> *@
+        </ExtraTemplate>
+    </Panel>
+</Collapse>
+

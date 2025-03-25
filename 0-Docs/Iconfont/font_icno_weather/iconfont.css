@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "icon_weather"; /* Project id 2699269 */
+  src: url('iconfont.woff2?t=1627269564200') format('woff2'),
+       url('iconfont.woff?t=1627269564200') format('woff'),
+       url('iconfont.ttf?t=1627269564200') format('truetype');
+}
+
+.icon_weather {
+  font-family: "icon_weather" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jianyiyuliangzhan:before {
+  content: "\e651";
+}
+
+.icon-qiya:before {
+  content: "\e7fb";
+}
+
+.icon-fengsu1:before {
+  content: "\e609";
+}
+
+.icon-qiya1:before {
+  content: "\e60c";
+}
+
+.icon-shidu:before {
+  content: "\e60d";
+}
+
+.icon-haiwenchang:before {
+  content: "\e656";
+}
+
+.icon-wendu:before {
+  content: "\e66b";
+}
+
+.icon-fengsu2:before {
+  content: "\e64d";
+}
+
+.icon-fengsu3:before {
+  content: "\e782";
+}
+
+.icon-fengxiang1:before {
+  content: "\e783";
+}
+
+.icon-wendu1:before {
+  content: "\e788";
+}
+
+.icon-shidu1:before {
+  content: "\e78b";
+}
+

@@ -1,0 +1,56 @@
+﻿@inject IHostEnvironment Env
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <link rel="stylesheet" href="@Assets["_content/Modules.Core.Blazor/iconfont/iconfont.css"]" />
+    <link rel="stylesheet" href="@Assets["_content/AntDesign/css/ant-design-blazor.css"]" />
+    <link rel="stylesheet" href="@Assets["_content/Modules.Core.Blazor/quill/quill.snow.css"]" />
+    <link rel="stylesheet" href="@Assets["_content/Modules.Core.Blazor/quill/quill.bubble.css"]" />
+    <link rel="stylesheet" href="@Assets["_content/Modules.Core.Blazor/css/site.css"]" />
+    <link rel="stylesheet" href="@Assets["_content/Modules.Core.Blazor/css/animate.min.css"]" />
+    <link rel="stylesheet" href="@Assets["_content/Modules.Core.Blazor/css/data_row_css.css"]" />
+    <ImportMap />
+    <link rel="icon" type="image/png" href="_content/Modules.Core.Blazor/favicon.ico" />
+    <link rel="stylesheet" href="@Assets["Blazor.Server.styles.css"]" />
+    <HeadOutlet @rendermode="InteractiveServer" />
+</head>
+<body>
+    <Routes @rendermode="InteractiveServer" />
+    <!-- 不显示重连提示 -->
+    @* <div id="components-reconnect-modal" style="display: none;"></div> *@
+    <!-- hiprint -->
+    <link rel="stylesheet" href="@Assets["_content/Modules.Core.Blazor/hiprint/css/hiprint.css"]" />
+    <link rel="stylesheet" href="@Assets["_content/Modules.Core.Blazor/hiprint/css/print-lock.css"]" />
+
+    <!-- jQuery (hiprint 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="@Assets["_content/Modules.Core.Blazor/hiprint/plugins/jquery-3.7.1.min.js"]"></script>
+    <!-- hiprint 核心js-->
+    <script async src="@Assets["_content/Modules.Core.Blazor/hiprint/hiprint.bundle.js"]"></script>
+    <!-- 调用浏览器打印窗口helper类-->
+    <script async src="@Assets["_content/Modules.Core.Blazor/hiprint/plugins/jquery.hiwprint.js"]"></script>
+    <!-- 二维码生成组件-->
+    <script async src="@Assets["_content/Modules.Core.Blazor/hiprint/plugins/qrcode.js"]"></script>
+
+    <script src="@Assets["_content/AntDesign/js/ant-design-blazor.js"]"></script>
+    <script src="@Assets["_content/AntDesign.Charts/ant-design-charts-blazor.js"]"></script>
+
+    <script async src="@Assets["_content/Modules.Core.Blazor/js/common_fun.js"]"></script>
+
+    <!-- 可视化编辑器quill-->
+    <script async src="@Assets["_content/Modules.Core.Blazor/quill/quill.js"]"></script>
+    <script async src="@Assets["_content/Blazored.TextEditor/quill-blot-formatter.min.js"]"></script>
+    <script async src="@Assets["_content/Blazored.TextEditor/Blazored-BlazorQuill.js"]"></script>
+
+    <!-- 后端获取：var remoteUserAgent = await JSRuntime.InvokeAsync<string>("getUserAgent");-->
+    <script>
+        window.getUserAgent = () => {
+            return navigator.userAgent;
+        };
+    </script>
+
+    <script src="_framework/blazor.web.js" autostart="true"></script>
+</body>
+</html>
