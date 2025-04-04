@@ -44,8 +44,8 @@
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="9.0.3" />
     <PackageReference Include="Ocelot.Provider.Consul" Version="23.4.3" />
-    <PackageReference Include="Scalar.AspNetCore" Version="2.1.1" />
-    <PackageReference Include="SqlSugarCore" Version="5.1.4.185" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.1.5" />
+    <PackageReference Include="SqlSugarCore" Version="5.1.4.188" />
   </ItemGroup>
 
   <ItemGroup>
