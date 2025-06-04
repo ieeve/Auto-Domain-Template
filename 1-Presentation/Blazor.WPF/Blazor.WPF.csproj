@@ -21,8 +21,8 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-    <PackageReference Include="OpenCvSharp4" Version="4.10.0.20241108" />
-    <PackageReference Include="OpenCvSharp4.Windows" Version="4.10.0.20241108" />
+    <PackageReference Include="OpenCvSharp4" Version="4.11.0.20250507" />
+    <PackageReference Include="OpenCvSharp4.Windows" Version="4.11.0.20250507" />
   </ItemGroup>
 
 </Project>
