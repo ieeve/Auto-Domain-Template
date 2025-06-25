@@ -39,13 +39,13 @@
     <PackageReference Include="AutoDomain.Modules.MES.API" Version="4.1.205" />
     <PackageReference Include="AutoDomain.Modules.MES.Blazor" Version="4.1.205" />
     <PackageReference Include="AutoDomain.Modules.MES.Shared" Version="4.1.206" />
-    <PackageReference Include="Microsoft.AspNetCore.Http.Connections.Client" Version="9.0.5" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.5" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.5" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="9.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Connections.Client" Version="9.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="9.0.6" />
     <PackageReference Include="Ocelot.Provider.Consul" Version="24.0.0" />
-    <PackageReference Include="Scalar.AspNetCore" Version="2.4.8" />
-    <PackageReference Include="SqlSugarCore" Version="5.1.4.195" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.5.0" />
+    <PackageReference Include="SqlSugarCore" Version="5.1.4.196" />
   </ItemGroup>
 
   <ItemGroup>

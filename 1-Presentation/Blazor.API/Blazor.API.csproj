@@ -16,8 +16,8 @@
   <ItemGroup>
     <PackageReference Include="AutoDomain.Modules.Core.API" Version="4.1.205" />
     <PackageReference Include="AutoDomain.Modules.MES.API" Version="4.1.205" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.5" />
-    <PackageReference Include="Scalar.AspNetCore" Version="2.4.8" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.5.0" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
 
