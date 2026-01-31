@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <IsAotCompatible>True</IsAotCompatible>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+    <IsAotCompatible>True</IsAotCompatible>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Modules.CodeGenerator.Template.Domain\Modules.CodeGenerator.Template.Domain.csproj" />
+    <ProjectReference Include="..\Modules.CodeGenerator.Template.Repository\Modules.CodeGenerator.Template.Repository.csproj" />
+    <ProjectReference Include="..\Modules.CodeGenerator.Template.Shared\Modules.CodeGenerator.Template.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

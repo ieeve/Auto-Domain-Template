@@ -1,0 +1,28 @@
+﻿@page "/ObjectData/ObjectDataExtend/{ObjectId}"
+@using Microsoft.AspNetCore.Components.Rendering
+@using Modules.Core.Blazor.Pages.ObjectData
+@inherits BasePage
+<PageTitle>@CurrentMenu.PageTitle @Modules.Core.Security.Common.GlobalConfig.SiteTitle</PageTitle>
+<ObjectDataList @ref="REF_TABLE"
+                TableColumnExtend="@TableColumnRander"
+                Object_id="@ObjectId"
+                AttachWhere="@AttachWhere"
+                TableOptions="TableOptions">
+    <ToolBarExtend>
+        <Button Size="@ButtonSize.Default" OnClick="@TestClick" Icon="@IconType.Outline.Plus" Type="ButtonType.Primary">测试扩展按钮</Button>
+    </ToolBarExtend>
+</ObjectDataList>
+
+@code {
+    //也可以在代码中定义 ToolBarExtend
+    // private void ToolBarExtend(RenderTreeBuilder __builder)
+    // {
+    //     <Button Size="@ButtonSize.Default" OnClick="@TestClick" Icon="@IconType.Outline.Plus" Type="ButtonType.Primary">测试列覆盖</Button>
+    // }
+
+    //覆盖ObjectDataList中对应的列 需要在TableColumnRander.Add 对应列名称
+    private RenderFragment Column12(string value)
+    {
+        return@<Button Size="@ButtonSize.Default" OnClick="@TestClick" Icon="@IconType.Outline.Plus" Type="ButtonType.Primary">@value</Button>;
+    }
+}

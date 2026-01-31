@@ -1,17 +1,25 @@
 {
-    "DbConfig": [
-        {
-            "ID": "Sqlite",
-            "Name": "Sqlite数据库",
-            "DbServeIP": "",
-            "DbType": 2,
-            "DbUsername": "",
-            "DbPassword": "",
-            "DbName": "",
-            "SqliteFilePath": "../Data/Data.db", 
-            "IsDefault": true,
-            "IsReadOnly": false,
-            "Tenant_id": "1675477064234438656"
-        }
-    ]
+  "DbConfig": [
+    {
+      "Name": "Sqlite数据库",
+      "DbServeIP": "",
+      "DbPort": null,
+      "DbType": 2,
+      "DbUsername": "",
+      "DbPassword": "",
+      "DbName": "",
+      "Service_name": null,
+      "SqliteFilePath": "../../../../Data/Data.db", //发布后需要使用:"../Data/Data.db"
+      "IsDefault": false,
+      "IsReadOnly": false,
+      "Tenant_id": "1633675311801569280",
+      "Id": "Sqlite",
+      "Createuid": null,
+      "Createtime": "0001-01-01T00:00:00",
+      "Updateuid": null,
+      "Updatetime": null,
+      "Row_CSS_Class": null,
+      "Row_no": 0
+    }
+  ]
 }

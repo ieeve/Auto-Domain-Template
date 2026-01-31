@@ -1,0 +1,96 @@
+﻿@page "/Template/CodeTemplate/CodeTemplateSimpleList"
+
+@using Modules.CodeGenerator.Template.Blazor.Pages.CodeTemplate.Components
+@using Modules.CodeGenerator.Template.Shared.CodeTemplate
+@inherits BasePage
+@attribute [Authorize]
+
+<PageTitle>@CurrentMenu.PageTitle @Modules.Core.Security.Common.GlobalConfig.SiteTitle</PageTitle>
+
+<GridRow Align="RowAlign.Middle" Style="height:48px;">
+    <GridCol Span="12">
+        @if (CurrentMenu.IsEdit)
+        {
+            <Button OnClick="@AddClick" Icon="@IconType.Outline.Plus" Type="ButtonType.Primary">@L["添加"]</Button>
+        }
+    </GridCol>
+
+    <GridCol Span="12">
+        <div class="Table_Right_Tool">
+            <Button Size="@ButtonSize.Small" Type="@ButtonType.Text" Icon="@IconType.Outline.Reload" OnClick="ResetTable">@L["刷新"]</Button>
+            @if (CurrentMenu.IsEdit)
+            {
+                <Button Type="@ButtonType.Text" Size="@ButtonSize.Small" Icon="@IconType.Outline.Delete" OnClick="@BatchDelClick">@L["批量"]</Button>
+                <Button Size="@ButtonSize.Small" Type="@ButtonType.Text" Icon="@IconType.Outline.Edit">@L["批量"]</Button>
+            }
+        </div>
+    </GridCol>
+</GridRow>
+
+<Table @ref="AntTable" Resizable
+       RowClassName="@(x => x.Data.Row_CSS_Class)"
+       ScrollY="@TableOptions.ScrollY"
+       RowKey="s=>s.Id"
+       Bordered="true"
+       Size=@TableSize.Small
+       TItem="CodeTemplateVM"
+       DataSource="TableModel.DataSource"
+       @bind-PageIndex="TableModel.PageIndex"
+       @bind-PageSize="TableModel.PageSize"
+       @bind-SelectedRows="TableModel.SelectedRows"
+       Total="TableModel.TotalCount"
+       Loading="TableModel.Loading"
+       OnChange="HandleTableChangeAsync"
+       RemoteDataSource>
+    <ChildContent>
+        <Selection Fixed="@(TableOptions.SelectionColumnFixed? ColumnFixPlacement.Left: null)" Type="SelectionType.Checkbox" Width="50" />
+        @if (CurrentMenu.IsEdit)
+        {
+            <ActionColumn Fixed="@(TableOptions.ActionColumnFixed? ColumnFixPlacement.Left: null)" Title="@L["操作"]" Width="70">
+                <Space Size="@("1px")">
+                    <SpaceItem>
+                        <Button Size="@ButtonSize.Small" OnClick="()=>EditClick(context)" Type="@ButtonType.Link" Icon="@IconType.Outline.Edit" />
+                    </SpaceItem>
+                    @if (CurrentMenu.IsDelete)
+                    {
+                        <SpaceItem>
+                            <Button Size="@ButtonSize.Small" OnClick="()=>DelClick(context)" Type="@ButtonType.Link" Icon="@IconType.Outline.Delete" />
+                        </SpaceItem>
+                    }
+                </Space>
+            </ActionColumn>
+        }
+
+        @*
+        代码生成器会覆盖标记之间的内容。*@
+        @*CodeGenerator start*@
+        <AntDesign.PropertyColumn Property="c=>c.Id" Width="150" Sortable Filterable Ellipsis></AntDesign.PropertyColumn>
+        <AntDesign.PropertyColumn Property="c=>c.Username" Width="150" Sortable Filterable Ellipsis></AntDesign.PropertyColumn>
+        @*CodeGenerator end*@
+    </ChildContent>
+    <PaginationTemplate>
+        <Pagination Style="text-align:center;line-height:38px;"
+                    Total="context.Total"
+                    Size="PaginationSize.Small"
+                    ShowTotal=showTotal
+                    PageSize="context.PageSize"
+                    Current="context.PageIndex"
+                    OnChange="context.HandlePageChange"
+                    PageSizeOptions="TableOptions.PageSizeOptions" />
+    </PaginationTemplate>
+</Table>
+
+<Modal Title="@Dialog.Title"
+       @bind-Visible="@Dialog.Visible"
+       Width="@Dialog.Width"
+       Draggable="@Dialog.Draggable"
+       Resizable="@Dialog.Resizable"
+       DragInViewport="@Dialog.DragInViewport"
+       Footer="null">
+    <CodeTemplateAdd model="@EditRow" IsAdd="@IsAdd" OnValueCallback="OnValueCallback"></CodeTemplateAdd>
+</Modal>
+
+@code
+{
+    Func<PaginationTotalContext, string> showTotal;protected override void OnInitialized(){showTotal = ctx => L["总计"] + $" {ctx.Total} " + L["项"];}
+}

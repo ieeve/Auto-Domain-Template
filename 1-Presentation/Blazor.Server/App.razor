@@ -1,12 +1,16 @@
-﻿@inject IHostEnvironment Env
+﻿@using Microsoft.AspNetCore.Components.Web
+@using static Microsoft.AspNetCore.Components.Web.RenderMode
+@inject IHostEnvironment Env
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="/" />
+    <ResourcePreloader />
     <link rel="stylesheet" href="@Assets["_content/Modules.Core.Blazor/iconfont/iconfont.css"]" />
     <link rel="stylesheet" href="@Assets["_content/AntDesign/css/ant-design-blazor.css"]" />
+    <link rel="stylesheet" href="@Assets["_content/AntDesign/css/ant-design-blazor.variable.css"]" />
     <link rel="stylesheet" href="@Assets["_content/Modules.Core.Blazor/quill/quill.snow.css"]" />
     <link rel="stylesheet" href="@Assets["_content/Modules.Core.Blazor/quill/quill.bubble.css"]" />
     <link rel="stylesheet" href="@Assets["_content/Modules.Core.Blazor/css/site.css"]" />
@@ -15,12 +19,11 @@
     <ImportMap />
     <link rel="icon" type="image/png" href="_content/Modules.Core.Blazor/favicon.ico" />
     <link rel="stylesheet" href="@Assets["Blazor.Server.styles.css"]" />
-    <HeadOutlet @rendermode="InteractiveServer" />
+    <HeadOutlet @rendermode="@renderMode" />
 </head>
 <body>
-    <Routes @rendermode="InteractiveServer" />
-    <!-- 不显示重连提示 -->
-    @* <div id="components-reconnect-modal" style="display: none;"></div> *@
+    <Routes @rendermode="@renderMode" />
+    @* <Modules.Core.Blazor.Pages.PageResult.ReconnectModal /> *@
     <!-- hiprint -->
     <link rel="stylesheet" href="@Assets["_content/Modules.Core.Blazor/hiprint/css/hiprint.css"]" />
     <link rel="stylesheet" href="@Assets["_content/Modules.Core.Blazor/hiprint/css/print-lock.css"]" />
@@ -43,7 +46,7 @@
     <script async src="@Assets["_content/Modules.Core.Blazor/quill/quill.js"]"></script>
     <script async src="@Assets["_content/Blazored.TextEditor/quill-blot-formatter.min.js"]"></script>
     <script async src="@Assets["_content/Blazored.TextEditor/Blazored-BlazorQuill.js"]"></script>
-
+    <script async src="@Assets["_content/Modules.Core.Blazor/webcam/CameraStreamer.js"]"></script>
     <!-- 后端获取：var remoteUserAgent = await JSRuntime.InvokeAsync<string>("getUserAgent");-->
     <script>
         window.getUserAgent = () => {
@@ -51,6 +54,9 @@
         };
     </script>
 
-    <script src="_framework/blazor.web.js" autostart="true"></script>
+    <script src="@Assets["_framework/blazor.web.js"]"></script>
 </body>
 </html>
+@code {
+    private readonly IComponentRenderMode renderMode = new InteractiveServerRenderMode(prerender: false);
+}

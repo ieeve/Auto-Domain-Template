@@ -6,10 +6,8 @@
 @using Modules.Core.Blazor.Pages.Base_user_notice
 @using Modules.Core.Shared.Base_sys_menu;
 @attribute [Authorize]
-<PageTitle>我的工作台 @Modules.Core.Shared.AppConfig.GlobalConfig.SiteTitle</PageTitle>
-<br />
+<PageTitle>我的工作台 @Modules.Core.Security.Common.GlobalConfig.SiteTitle</PageTitle>
 <Base_kanbanBox></Base_kanbanBox>
-
 <Collapse DefaultActiveKey="@(new[]{"1"})">
     <Panel Header="我的任务" Key="1">
         <ChildContent>
@@ -26,7 +24,7 @@
 </Collapse>
 <br />
 <Collapse DefaultActiveKey="@(new[]{"1"})">
-    <Panel Header="我的工具" Key="1">
+    <Panel Header="我的收藏" Key="1">
         <ChildContent>
             <User_favorite_menuBox></User_favorite_menuBox>
         </ChildContent>

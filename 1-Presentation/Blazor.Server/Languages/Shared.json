@@ -1,38 +1,443 @@
 ﻿{
+  "搜索...": {
+    "en-US": "Search...",
+    "zh-CN": "搜索...",
+    "ko-KR": "찾다...",
+    "de-DE": "Suchen...",
+    "ru-RU": "Разрешения пользователей",
+    "fr-FR": "Autorisations des utilisateurs",
+    "ja-JP": "検索..."
+  },
   "请填写内容": {
     "en-US": "Please fill in the content",
     "zh-CN": "请填写内容",
-    "ko-KR": "",
-    "de-DE": "",
-    "ru-RU": "",
-    "fr-FR": "",
-    "ja-JP": ""
+    "ko-KR": "내용을 입력하세요",
+    "de-DE": "Bitte Inhalt eingeben",
+    "ru-RU": "Пожалуйста, заполните содержимое",
+    "fr-FR": "Veuillez remplir le contenu",
+    "ja-JP": "内容を入力してください"
   },
   "确定": {
     "en-US": "OK",
     "zh-CN": "确定",
-    "ko-KR": "",
-    "de-DE": "",
-    "ru-RU": "",
-    "fr-FR": "",
-    "ja-JP": ""
+    "ko-KR": "확인",
+    "de-DE": "Bestätigen",
+    "ru-RU": "ОК",
+    "fr-FR": "OK",
+    "ja-JP": "確定"
   },
   "取消": {
     "en-US": "Cancel",
     "zh-CN": "取消",
-    "ko-KR": "",
-    "de-DE": "",
-    "ru-RU": "",
-    "fr-FR": "",
-    "ja-JP": ""
+    "ko-KR": "취소",
+    "de-DE": "Abbrechen",
+    "ru-RU": "Отмена",
+    "fr-FR": "Annuler",
+    "ja-JP": "キャンセル"
   },
   "未授权访问": {
     "en-US": "Unauthorized access",
     "zh-CN": "未授权访问",
-    "ko-KR": "",
-    "de-DE": "",
-    "ru-RU": "",
-    "fr-FR": "",
-    "ja-JP": ""
+    "ko-KR": "권한 없는 접근",
+    "de-DE": "Nicht autorisierter Zugriff",
+    "ru-RU": "Неавторизованный доступ",
+    "fr-FR": "Accès non autorisé",
+    "ja-JP": "不正アクセス"
+  },
+  "添加": {
+    "en-US": "Add",
+    "zh-CN": "添加",
+    "ko-KR": "추가",
+    "de-DE": "Hinzufügen",
+    "ru-RU": "Добавить",
+    "fr-FR": "Ajouter",
+    "ja-JP": "追加"
+  },
+  "修改": {
+    "en-US": "Modify",
+    "zh-CN": "修改",
+    "ko-KR": "수정",
+    "de-DE": "Ändern",
+    "ru-RU": "Изменить",
+    "fr-FR": "Modifier",
+    "ja-JP": "変更"
+  },
+  "删除": {
+    "en-US": "Delete",
+    "zh-CN": "删除",
+    "ko-KR": "삭제",
+    "de-DE": "Löschen",
+    "ru-RU": "Удалить",
+    "fr-FR": "Supprimer",
+    "ja-JP": "削除"
+  },
+  "刷新": {
+    "en-US": "Refresh",
+    "zh-CN": "刷新",
+    "ko-KR": "새로고침",
+    "de-DE": "Aktualisieren",
+    "ru-RU": "Обновить",
+    "fr-FR": "Actualiser",
+    "ja-JP": "更新"
+  },
+  "批量": {
+    "en-US": "Batch",
+    "zh-CN": "批量",
+    "ko-KR": "일괄",
+    "de-DE": "Batch",
+    "ru-RU": "Пакетная",
+    "fr-FR": "Lot",
+    "ja-JP": "一括"
+  },
+  "设置": {
+    "en-US": "Settings",
+    "zh-CN": "设置",
+    "ko-KR": "설정",
+    "de-DE": "Einstellungen",
+    "ru-RU": "Настройки",
+    "fr-FR": "Paramètres",
+    "ja-JP": "設定"
+  },
+  "自动换行": {
+    "en-US": "Auto Wrap",
+    "zh-CN": "自动换行",
+    "ko-KR": "자동 줄바꿈",
+    "de-DE": "Automatischer Zeilenumbruch",
+    "ru-RU": "Автоперенос",
+    "fr-FR": "Retour automatique à la ligne",
+    "ja-JP": "自動改行"
+  },
+  "自动列宽": {
+    "en-US": "Auto Column Width",
+    "zh-CN": "自动列宽",
+    "ko-KR": "자동 열 너비",
+    "de-DE": "Automatische Spaltenbreite",
+    "ru-RU": "Автоматическая ширина столбца",
+    "fr-FR": "Largeur de colonne automatique",
+    "ja-JP": "自動列幅"
+  },
+  "保存": {
+    "en-US": "Save",
+    "zh-CN": "保存",
+    "ko-KR": "저장",
+    "de-DE": "Speichern",
+    "ru-RU": "Сохранить",
+    "fr-FR": "Enregistrer",
+    "ja-JP": "保存"
+  },
+  "回复默认": {
+    "en-US": "Reset to Default",
+    "zh-CN": "回复默认",
+    "ko-KR": "기본값으로 복원",
+    "de-DE": "Auf Standard zurücksetzen",
+    "ru-RU": "Восстановить значения по умолчанию",
+    "fr-FR": "Réinitialiser aux valeurs par défaut",
+    "ja-JP": "デフォルトに戻す"
+  },
+  "更新时间": {
+    "en-US": "Update Time",
+    "zh-CN": "更新时间",
+    "ko-KR": "업데이트 시간",
+    "de-DE": "Aktualisierungszeit",
+    "ru-RU": "Время обновления",
+    "fr-FR": "Heure de mise à jour",
+    "ja-JP": "更新時間"
+  },
+  "建立时间": {
+    "en-US": "Create Time",
+    "zh-CN": "建立时间",
+    "ko-KR": "생성 시간",
+    "de-DE": "Erstellungszeit",
+    "ru-RU": "Время создания",
+    "fr-FR": "Heure de création",
+    "ja-JP": "作成時間"
+  },
+  "更新用户": {
+    "en-US": "Updated By",
+    "zh-CN": "更新用户",
+    "ko-KR": "업데이트 사용자",
+    "de-DE": "Aktualisiert von",
+    "ru-RU": "Обновлено пользователем",
+    "fr-FR": "Mis à jour par",
+    "ja-JP": "更新ユーザー"
+  },
+  "建立用户": {
+    "en-US": "Created By",
+    "zh-CN": "建立用户",
+    "ko-KR": "생성 사용자",
+    "de-DE": "Erstellt von",
+    "ru-RU": "Создано пользователем",
+    "fr-FR": "Créé par",
+    "ja-JP": "作成ユーザー"
+  },
+  "Excel导入": {
+    "en-US": "Import Excel",
+    "zh-CN": "Excel导入",
+    "ko-KR": "Excel 가져오기",
+    "de-DE": "Excel importieren",
+    "ru-RU": "Импорт Excel",
+    "fr-FR": "Importer Excel",
+    "ja-JP": "Excelインポート"
+  },
+  "Excel导出": {
+    "en-US": "Export Excel",
+    "zh-CN": "Excel导出",
+    "ko-KR": "Excel 내보내기",
+    "de-DE": "Excel exportieren",
+    "ru-RU": "Экспорт Excel",
+    "fr-FR": "Exporter Excel",
+    "ja-JP": "Excelエクスポート"
+  },
+  "导出当前页": {
+    "en-US": "Export Current Page",
+    "zh-CN": "导出当前页",
+    "ko-KR": "현재 페이지 내보내기",
+    "de-DE": "Aktuelle Seite exportieren",
+    "ru-RU": "Экспорт текущей страницы",
+    "fr-FR": "Exporter la page actuelle",
+    "ja-JP": "現在のページをエクスポート"
+  },
+  "导出全部": {
+    "en-US": "Export All",
+    "zh-CN": "导出全部",
+    "ko-KR": "전체 내보내기",
+    "de-DE": "Alles exportieren",
+    "ru-RU": "Экспорт всех",
+    "fr-FR": "Exporter tout",
+    "ja-JP": "全てエクスポート"
+  },
+  "操作": {
+    "en-US": "Actions",
+    "zh-CN": "操作",
+    "ko-KR": "작업",
+    "de-DE": "Aktionen",
+    "ru-RU": "Действия",
+    "fr-FR": "Actions",
+    "ja-JP": "操作"
+  },
+  "个人中心": {
+    "en-US": "Personal Center",
+    "zh-CN": "个人中心",
+    "ko-KR": "개인 센터",
+    "de-DE": "Persönliches Zentrum",
+    "ru-RU": "Личный центр",
+    "fr-FR": "Centre personnel",
+    "ja-JP": "パーソナルセンター"
+  },
+  "我的任务": {
+    "en-US": "My Tasks",
+    "zh-CN": "我的任务",
+    "ko-KR": "내 작업",
+    "de-DE": "Meine Aufgaben",
+    "ru-RU": "Мои задачи",
+    "fr-FR": "Mes tâches",
+    "ja-JP": "私のタスク"
+  },
+  "我的订阅": {
+    "en-US": "My Subscriptions",
+    "zh-CN": "我的订阅",
+    "ko-KR": "내 구독",
+    "de-DE": "Meine Abonnements",
+    "ru-RU": "Мои подписки",
+    "fr-FR": "Mes abonnements",
+    "ja-JP": "私のサブスクリプション"
+  },
+  "我的收藏": {
+    "en-US": "My Favorites",
+    "zh-CN": "我的收藏",
+    "ko-KR": "내 즐겨찾기",
+    "de-DE": "Meine Favoriten",
+    "ru-RU": "Мои избранные",
+    "fr-FR": "Mes favoris",
+    "ja-JP": "私のお気に入り"
+  },
+  "用户登录": {
+    "en-US": "User Login",
+    "zh-CN": "用户登录",
+    "ko-KR": "사용자 로그인",
+    "de-DE": "Benutzeranmeldung",
+    "ru-RU": "Вход пользователя",
+    "fr-FR": "Connexion utilisateur",
+    "ja-JP": "ユーザーログイン"
+  },
+  "关于": {
+    "en-US": "About",
+    "zh-CN": "关于",
+    "ko-KR": "정보",
+    "de-DE": "Über",
+    "ru-RU": "О нас",
+    "fr-FR": "À propos",
+    "ja-JP": "について"
+  },
+  "用户名": {
+    "en-US": "Username",
+    "zh-CN": "用户名",
+    "ko-KR": "사용자 이름",
+    "de-DE": "Benutzername",
+    "ru-RU": "Имя пользователя",
+    "fr-FR": "Nom d'utilisateur",
+    "ja-JP": "ユーザー名"
+  },
+  "密码": {
+    "en-US": "Password",
+    "zh-CN": "密码",
+    "ko-KR": "비밀번호",
+    "de-DE": "Passwort",
+    "ru-RU": "Пароль",
+    "fr-FR": "Mot de passe",
+    "ja-JP": "パスワード"
+  },
+  "记住密码": {
+    "en-US": "Remember Password",
+    "zh-CN": "记住密码",
+    "ko-KR": "비밀번호 기억하기",
+    "de-DE": "Passwort merken",
+    "ru-RU": "Запомнить пароль",
+    "fr-FR": "Se souvenir du mot de passe",
+    "ja-JP": "パスワードを記憶する"
+  },
+  "登  录": {
+    "en-US": "Login",
+    "zh-CN": "登录",
+    "ko-KR": "로그인",
+    "de-DE": "Anmelden",
+    "ru-RU": "Войти",
+    "fr-FR": "Connexion",
+    "ja-JP": "ログイン"
+  },
+  "我的工具": {
+    "en-US": "My Tools",
+    "zh-CN": "我的工具",
+    "ko-KR": "내 도구",
+    "de-DE": "Meine Werkzeuge",
+    "ru-RU": "Мои инструменты",
+    "fr-FR": "Mes outils",
+    "ja-JP": "私のツール"
+  },
+  "我的菜单": {
+    "en-US": "My Menu",
+    "zh-CN": "我的菜单",
+    "ko-KR": "내 메뉴",
+    "de-DE": "Mein Menü",
+    "ru-RU": "Мое меню",
+    "fr-FR": "Mon menu",
+    "ja-JP": "私のメニュー"
+  },
+  "更多": {
+    "en-US": "More",
+    "zh-CN": "更多",
+    "ko-KR": "더보기",
+    "de-DE": "Mehr",
+    "ru-RU": "Больше",
+    "fr-FR": "Plus",
+    "ja-JP": "もっと"
+  },
+  "退出登录": {
+    "en-US": "Logout",
+    "zh-CN": "退出登录",
+    "ko-KR": "로그아웃",
+    "de-DE": "Abmelden",
+    "ru-RU": "Выйти",
+    "fr-FR": "Déconnexion",
+    "ja-JP": "ログアウト"
+  },
+  "恢复默认": {
+    "en-US": "Restore Defaults",
+    "zh-CN": "恢复默认",
+    "ko-KR": "기본값 복원",
+    "de-DE": "Standardwerte wiederherstellen",
+    "ru-RU": "Восстановить значения по умолчанию",
+    "fr-FR": "Restaurer les valeurs par défaut",
+    "ja-JP": "デフォルト値に復元"
+  },
+  "颜色选择": {
+    "en-US": "Color Selection",
+    "zh-CN": "颜色选择",
+    "ko-KR": "색상 선택",
+    "de-DE": "Farbauswahl",
+    "ru-RU": "Выбор цвета",
+    "fr-FR": "Sélection de couleur",
+    "ja-JP": "色の選択"
+  },
+  "列宽度": {
+    "en-US": "Column Width",
+    "zh-CN": "列宽度",
+    "ko-KR": "열 너비",
+    "de-DE": "Spaltenbreite",
+    "ru-RU": "Ширина столбца",
+    "fr-FR": "Largeur de colonne",
+    "ja-JP": "列の幅"
+  },
+  "字段名": {
+    "en-US": "Field Name",
+    "zh-CN": "字段名",
+    "ko-KR": "필드 이름",
+    "de-DE": "Feldname",
+    "ru-RU": "Имя поля",
+    "fr-FR": "Nom du champ",
+    "ja-JP": "フィールド名"
+  },
+  "显示名": {
+    "en-US": "Display Name",
+    "zh-CN": "显示名",
+    "ko-KR": "표시 이름",
+    "de-DE": "Anzeigename",
+    "ru-RU": "Отображаемое имя",
+    "fr-FR": "Nom d'affichage",
+    "ja-JP": "表示名"
+  },
+  "表头颜色": {
+    "en-US": "Header Color",
+    "zh-CN": "表头颜色",
+    "ko-KR": "헤더 색상",
+    "de-DE": "Kopfzeilenfarbe",
+    "ru-RU": "Цвет заголовка",
+    "fr-FR": "Couleur de l'en-tête",
+    "ja-JP": "ヘッダーの色"
+  },
+  "顺序": {
+    "en-US": "Order",
+    "zh-CN": "顺序",
+    "ko-KR": "순서",
+    "de-DE": "Reihenfolge",
+    "ru-RU": "Порядок",
+    "fr-FR": "Ordre",
+    "ja-JP": "順序"
+  },
+  "隐藏": {
+    "en-US": "Hide",
+    "zh-CN": "隐藏",
+    "ko-KR": "숨기기",
+    "de-DE": "Ausblenden",
+    "ru-RU": "Скрыть",
+    "fr-FR": "Masquer",
+    "ja-JP": "隠す"
+  },
+  "用户自定义列": {
+    "en-US": "User-Defined Columns",
+    "zh-CN": "用户自定义列",
+    "ko-KR": "사용자 정의 열",
+    "de-DE": "Benutzerdefinierte Spalten",
+    "ru-RU": "Пользовательские столбцы",
+    "fr-FR": "Colonnes définies par l'utilisateur",
+    "ja-JP": "ユーザー定義列"
+  },
+  "总计": {
+    "en-US": "Total",
+    "zh-CN": "总计",
+    "ko-KR": "총계",
+    "de-DE": "Gesamt",
+    "ru-RU": "Всего",
+    "fr-FR": "Total",
+    "ja-JP": "合計"
+  },
+  "项": {
+    "en-US": "Items",
+    "zh-CN": "项",
+    "ko-KR": "항목",
+    "de-DE": "Punkt",
+    "ru-RU": "Пункт",
+    "fr-FR": "Article",
+    "ja-JP": "項"
   }
 }

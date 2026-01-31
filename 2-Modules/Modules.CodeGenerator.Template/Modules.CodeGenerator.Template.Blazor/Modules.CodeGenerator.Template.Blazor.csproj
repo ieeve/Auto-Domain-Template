@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <IsAotCompatible>True</IsAotCompatible>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+    <IsAotCompatible>True</IsAotCompatible>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\CodeTemplate\CodeTemplateListComp.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\CodeTemplate\CodeTemplateListComp.razor" />
+    <None Include="Pages\CodeTemplate\CodeTemplateList.razor" />
+    <None Include="Pages\CodeTemplate\Components\CodeTemplateAdd.razor" />
+    <None Include="模板_page.razor" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AntDesign.Charts" Version="0.9.0" />
+    <PackageReference Include="Mapster" Version="7.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Modules.CodeGenerator.Template.AppServices\Modules.CodeGenerator.Template.AppServices.csproj" />
+    <ProjectReference Include="..\Modules.CodeGenerator.Template.Domain\Modules.CodeGenerator.Template.Domain.csproj" />
+    <ProjectReference Include="..\Modules.CodeGenerator.Template.Shared\Modules.CodeGenerator.Template.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Pages\CodeTemplate\Components\CodeTemplateSimpleListComp.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
+</Project>

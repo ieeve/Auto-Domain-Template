@@ -503,7 +503,7 @@
     "fr-FR": "",
     "ja-JP": ""
   },
-  
+
   "BOM管理": {
     "en-US": "BOM Management",
     "zh-CN": "BOM管理",
@@ -648,9 +648,9 @@
     "fr-FR": "",
     "ja-JP": ""
   },
-  "任务管理": {
+  "定时任务管理": {
     "en-US": "Task management",
-    "zh-CN": "任务管理",
+    "zh-CN": "定时任务管理",
     "ko-KR": "임무 관리",
     "de-DE": "",
     "ru-RU": "",
@@ -720,27 +720,27 @@
     "fr-FR": "",
     "ja-JP": ""
   },
-  "删除记录": {
+  "数据删除记录": {
     "en-US": "Delete records",
-    "zh-CN": "删除记录",
+    "zh-CN": "数据删除记录",
     "ko-KR": "레코드 삭제",
     "de-DE": "",
     "ru-RU": "",
     "fr-FR": "",
     "ja-JP": ""
   },
-  "修改记录": {
+  "数据修改记录": {
     "en-US": "Modify records",
-    "zh-CN": "修改记录",
+    "zh-CN": "数据修改记录",
     "ko-KR": "레코드 수정",
     "de-DE": "",
     "ru-RU": "",
     "fr-FR": "",
     "ja-JP": ""
   },
-  "计划任务日志": {
+  "定时任务日志": {
     "en-US": "Plan Task Log",
-    "zh-CN": "计划任务日志",
+    "zh-CN": "定时任务日志",
     "ko-KR": "예약된 작업 로그",
     "de-DE": "",
     "ru-RU": "",

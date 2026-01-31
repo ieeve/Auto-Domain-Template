@@ -1,6 +1,0 @@
-@Modules.JHW.API_HostAddress = http://localhost:5030
-
-GET {{Modules.JHW.API_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

@@ -1,11 +1,83 @@
 ﻿{
-    "搜索...": {
-        "en-US": "Search...",
-        "zh-CN": "搜索...",
-        "ko-KR": "찾다...",
-        "de-DE": "Suchen...",
-        "ru-RU": "Разрешения пользователей",
-        "fr-FR": "Autorisations des utilisateurs",
-        "ja-JP": "検索..."
-    }
+  "从数据库生成": {
+    "en-US": "Generate from Database",
+    "zh-CN": "从数据库生成",
+    "ko-KR": "데이터베이스에서 생성",
+    "de-DE": "Aus Datenbank generieren",
+    "ru-RU": "Сгенерировать из базы данных",
+    "fr-FR": "Générer à partir de la base de données",
+    "ja-JP": "データベースから生成"
+  },
+  "对象属性": {
+    "en-US": "Object Properties",
+    "zh-CN": "对象属性",
+    "ko-KR": "객체 속성",
+    "de-DE": "Objekteigenschaften",
+    "ru-RU": "Свойства объекта",
+    "fr-FR": "Propriétés de l'objet",
+    "ja-JP": "オブジェクトのプロパティ"
+  },
+  "查看数据": {
+    "en-US": "View Data",
+    "zh-CN": "查看数据",
+    "ko-KR": "데이터 보기",
+    "de-DE": "Daten anzeigen",
+    "ru-RU": "Просмотр данных",
+    "fr-FR": "Voir les données",
+    "ja-JP": "データを表示"
+  },
+  "删除对象定义": {
+    "en-US": "Delete Object Definition",
+    "zh-CN": "删除对象定义",
+    "ko-KR": "객체 정의 삭제",
+    "de-DE": "Objektdefinition löschen",
+    "ru-RU": "Удалить определение объекта",
+    "fr-FR": "Supprimer la définition de l'objet",
+    "ja-JP": "オブジェクト定義を削除"
+  },
+  "删除对象定义和数据表": {
+    "en-US": "Delete Object Definition and Data Table",
+    "zh-CN": "删除对象定义和数据表",
+    "ko-KR": "객체 정의 및 데이터 테이블 삭제",
+    "de-DE": "Objektdefinition und Datentabelle löschen",
+    "ru-RU": "Удалить определение объекта и таблицу данных",
+    "fr-FR": "Supprimer la définition de l'objet et la table de données",
+    "ja-JP": "オブジェクト定義とデータテーブルを削除"
+  },
+  "删除对象": {
+    "en-US": "Delete Object",
+    "zh-CN": "删除对象",
+    "ko-KR": "객체 삭제",
+    "de-DE": "Objekt löschen",
+    "ru-RU": "Удалить объект",
+    "fr-FR": "Supprimer l'objet",
+    "ja-JP": "オブジェクトを削除"
+  },
+  "对象事件": {
+    "en-US": "Object Events",
+    "zh-CN": "对象事件",
+    "ko-KR": "객체 이벤트",
+    "de-DE": "Objektevents",
+    "ru-RU": "События объекта",
+    "fr-FR": "Événements de l'objet",
+    "ja-JP": "オブジェクトイベント"
+  },
+  "多语言管理": {
+    "en-US": "Multilingual Management",
+    "zh-CN": "多语言管理",
+    "ko-KR": "다국어 관리",
+    "de-DE": "Mehrsprachige Verwaltung",
+    "ru-RU": "Управление многоязычием",
+    "fr-FR": "Gestion multilingue",
+    "ja-JP": "多言語管理"
+  },
+  "存盘修改": {
+    "en-US": "Save Changes",
+    "zh-CN": "存盘修改",
+    "ko-KR": "변경 사항 저장",
+    "de-DE": "Änderungen speichern",
+    "ru-RU": "Сохранить изменения",
+    "fr-FR": "Enregistrer les modifications",
+    "ja-JP": "変更を保存"
+  }
 }

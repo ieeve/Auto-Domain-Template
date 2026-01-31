@@ -8,8 +8,8 @@
             typeof(Modules.Core.Blazor._Imports).Assembly,
             typeof(Modules.Tasks.Blazor._Imports).Assembly,
             typeof(Modules.CodeGenerator.Blazor._Imports).Assembly,
-            typeof(Modules.Template.Blazor._Imports).Assembly,
             typeof(Modules.MES.Blazor._Imports).Assembly,
+            typeof(Modules.My.Blazor._Imports).Assembly,
         ];
     }
 }

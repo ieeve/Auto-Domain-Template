@@ -1,11 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
 	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Deterministic>false</Deterministic>
+	<CETCompat>false</CETCompat><!--某些window独立运行版的兼容错误-->
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -33,29 +34,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoDomain.Modules.CodeGenerator" Version="4.1.205" />
-    <PackageReference Include="AutoDomain.Modules.Core.API" Version="4.1.205" />
-    <PackageReference Include="AutoDomain.Modules.Core.Blazor" Version="4.1.206" />
-    <PackageReference Include="AutoDomain.Modules.MES.API" Version="4.1.205" />
-    <PackageReference Include="AutoDomain.Modules.MES.Blazor" Version="4.1.205" />
-    <PackageReference Include="AutoDomain.Modules.MES.Shared" Version="4.1.206" />
-    <PackageReference Include="Microsoft.AspNetCore.Http.Connections.Client" Version="9.0.6" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.6" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="9.0.6" />
-    <PackageReference Include="Ocelot.Provider.Consul" Version="24.0.0" />
-    <PackageReference Include="Scalar.AspNetCore" Version="2.5.0" />
-    <PackageReference Include="SqlSugarCore" Version="5.1.4.196" />
+    <PackageReference Include="AutoDomain.Modules.MES.Blazor" Version="4.2.16" />
+    <PackageReference Include="Ocelot.Provider.Consul" Version="24.1.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\2-Modules\Modules.Template\Modules.Template.Blazor\Modules.Template.Blazor.csproj" />
-    <ProjectReference Include="..\..\3-Modules.Core\Modules.Tasks\Modules.Tasks.Blazor\Modules.Tasks.Blazor.csproj" />
+    <ProjectReference Include="..\..\2-Modules\Modules.My\Modules.My.API\Modules.My.API.csproj" />
+    <ProjectReference Include="..\..\2-Modules\Modules.My\Modules.My.Blazor\Modules.My.Blazor.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Pages\Dashboard\Components\" />
     <Folder Include="wwwroot\" />
+    <Folder Include="static\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -70,12 +61,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Update="Config\CoreSerilog_mysql.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Config\CoreSerilog_postgre.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="Pages\Dashboard\Dashboard.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>

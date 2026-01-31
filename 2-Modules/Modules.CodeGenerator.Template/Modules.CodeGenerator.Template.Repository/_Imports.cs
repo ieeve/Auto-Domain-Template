@@ -1,0 +1,1 @@
+global using Modules.CodeGenerator.Template.Repository.Base;

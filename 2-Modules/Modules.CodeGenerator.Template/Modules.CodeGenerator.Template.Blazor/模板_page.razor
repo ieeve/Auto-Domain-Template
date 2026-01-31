@@ -1,0 +1,32 @@
+﻿@page "/Template/object/模板"
+@page "/Template/object/模板/{Id}"
+@attribute [Authorize(Roles = "IsSuperAdmin,IsTenantAdmin,IsSolutionAdmin")]
+<PageTitle>数据中台 - Index @Modules.Core.Security.Common.GlobalConfig.SiteTitle</PageTitle>
+<h3>Template</h3>
+
+@code {
+    public static RenderFragment<string> ChatMessageDisplay = message =>
+        @<div class="chat-message">
+    <span class="author">@message</span>
+    <span class="text">@message</span>
+</div>
+    ;
+    public RenderFragment ChatMessageDisplay2(string message)
+    {
+        RenderFragment render;
+        render = @<div class="chat-message">
+            <span class="author">@message</span>
+            <Button OnClick="() => doubleTrueClick()"></Button>
+            <span class="text">@message</span>
+        </div>;
+        return render;
+    }
+    public void doubleTrueClick()
+    {
+
+    }
+}
+
+<style>
+
+</style>

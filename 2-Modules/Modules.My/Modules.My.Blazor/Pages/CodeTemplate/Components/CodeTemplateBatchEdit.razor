@@ -1,0 +1,106 @@
+﻿@inherits BasePage
+@using Modules.Core.Blazor.Components
+@using Modules.Core.Shared.ObjectDto
+<Alert Type="@AlertType.Error"
+       Message="@("正在批量修改"+@TableDataModel.TableModel.SelectedRows.Count()+"条记录, * 仅存盘解锁后的内容!")"
+       Closable />
+<br />
+<Form Model="@TableDataModel.ColumnHeaderModels"
+      LabelColSpan="8"
+      OnFinish="SubmitForm"
+      WrapperColSpan="16">
+    <Row Gutter="24">
+        <GridCol Span="@(TableDataModel.ColumnHeaderModels.Where(s => s.iseditable).Count() > 10 ? "12" : "24")">
+            @foreach (var column in TableDataModel.ColumnHeaderModels.Where(s => s.iseditable && !s.isunique)) //唯一列, 不允许批量修改
+            {
+                <FormItem>
+                    <LabelTemplate>
+                        @column.title
+                        <Icon Style="padding:8px;color:green;font-size:16px" Type="@(column.BatchEditEnable ? "unlock" : "lock")" OnClick="() => unlock(column)"></Icon>
+                    </LabelTemplate>
+                    <ChildContent>
+                        @switch (column.datatype)
+                        {
+                            case ObjectDataType.整数:
+                                <AntDesign.InputNumber Step="1" @bind-Value="@column.BindVal.IntVal" Disabled="@(!column.BatchEditEnable)" />
+                                break;
+                            case ObjectDataType.长整数:
+                                <AntDesign.InputNumber Step="1" @bind-Value="@column.BindVal.LongVal" Disabled="@(!column.BatchEditEnable)" />
+                                break;
+                            case ObjectDataType.日期:
+                                <DatePicker ShowTime="@false" TValue="DateTime ?" @bind-Value="@column.BindVal.DateTimeVal" Disabled="@(!column.BatchEditEnable)" />
+                                break;
+                            case ObjectDataType.日期时间:
+                                <DatePicker ShowTime="@true" TValue="DateTime ?" @bind-Value="@column.BindVal.DateTimeVal" Disabled="@(!column.BatchEditEnable)" />
+                                break;
+                            case ObjectDataType.布尔:
+                                <Switch @bind-Value="@column.BindVal.BoolVal" Disabled="@(!column.BatchEditEnable)" />
+                                break;
+                            case ObjectDataType.浮点数:
+                                <AntDesign.InputNumber Step="1" @bind-Value="@column.BindVal.DoubleVal" Disabled="@(!column.BatchEditEnable)" />
+                                break;
+                            case ObjectDataType.双精度浮点数:
+                                <AntDesign.InputNumber Step="1" @bind-Value="@column.BindVal.DoubleVal" Disabled="@(!column.BatchEditEnable)" />
+                                break;
+                            case ObjectDataType.货币:
+                                <AntDesign.InputNumber Step="1" @bind-Value="@column.BindVal.DecimalVal" Disabled="@(!column.BatchEditEnable)" />
+                                break;
+                            case ObjectDataType.对象:
+                                @if (column.Relation_mulit)
+                                {
+                                    <ObjectDataSelectMultiple ObjectID="@column.relationkey" ColumnName="@column.relationcolumn" WhereStr="@column.relation_where_str" Placeholder="@("模糊查询" + @column.title)" @bind-Value="@column.BindVal.StringVal"></ObjectDataSelectMultiple>
+                                }
+                                else
+                                {
+                                    <ObjectDataSelect ObjectID="@column.relationkey" ColumnName="@column.relationcolumn" WhereStr="@column.relation_where_str" Placeholder="@("模糊查询" + @column.title)" @bind-Value="@column.BindVal.StringVal"></ObjectDataSelect>
+                                }
+                                break;
+                            @*                         case ObjectDataType.视图:
+                            @if (column.Relation_mulit)
+                            {
+                                <ViewDataSelectMultiple ViewID="@column.relationkey" RelationColumn="@column.relationcolumn" Placeholder="@("模糊查询"+@column.title)" @bind-Value="@column.BindVal.StringVal"></ViewDataSelectMultiple>
+                            }
+                            else
+                            {
+                                <ViewDataSelect ViewID="@column.relationkey" RelationColumn="@column.relationcolumn" Placeholder="@("模糊查询"+@column.title)" @bind-Value="@column.BindVal.StringVal"></ViewDataSelect>
+                            }
+                            break; *@
+                            @*                         case ObjectDataType.图片:
+                            <UploadImageObject SolutionName="Object" ModuleName="@TableDataModel?.ObjectInfo?.Id" maxAllowedFiles="@column.Upload_max_count" maxFileSizeMB="@column.Upload_max_size" @bind-Value="@column.BindVal.StringVal"></UploadImageObject>
+                            break;
+
+                        case ObjectDataType.文件:
+                            <UploadFileObject SolutionName="Object" ModuleName="@TableDataModel?.ObjectInfo?.Id" maxAllowedFiles="@column.Upload_max_count" maxFileSizeMB="@column.Upload_max_size" @bind-Value="@column.BindVal.StringVal"></UploadFileObject>
+                            break; *@
+                            case ObjectDataType.枚举:
+                                <EnumDataSelectByID EnumID="@column.relationenum" @bind-Value="@column.BindVal.StringVal"></EnumDataSelectByID>
+                                break;
+                            default:
+                                @if (column.length > 200)
+                                {
+                                    <AntDesign.TextArea Rows="3" @bind-Value="@column.BindVal.StringVal" Disabled="@(!column.BatchEditEnable)" />
+
+                                }
+                                else
+                                {
+                                    <AntDesign.Input @bind-Value="@column.BindVal.StringVal" TValue="string" Disabled="@(!column.BatchEditEnable)" />
+                                }
+                                break;
+                        }
+                    </ChildContent>
+                </FormItem>
+            }
+        </GridCol>
+    </Row>
+    <FormItem WrapperColOffset="8" WrapperColSpan="16">
+        <Button Loading="@btnLoading" Disabled="@btnLoading" HtmlType="submit" Type="@ButtonType.Primary">
+            确定
+        </Button>
+        <Button OnClick="() => ReturnAsync(false)">
+            取消
+        </Button>
+    </FormItem>
+</Form>
+@code {
+
+}

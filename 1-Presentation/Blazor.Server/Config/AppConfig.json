@@ -1,6 +1,5 @@
 {
-  "AppConfig": {
     "Super_username": "super_admin",
-    "Super_password": "super_admin_123"
-  }
+    "Super_password": "super_admin_123",
+    "Forced_relogin_minute": "1440"
 }

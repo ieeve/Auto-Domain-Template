@@ -2,7 +2,6 @@
 <CascadingAuthenticationState>
             <Router AppAssembly="@typeof(Program).Assembly" AdditionalAssemblies="_PageRouteData.AdditionalPages">
                 <Found Context="routeData">
-                     <Modules.Core.Blazor.Layouts.Components.MyErrorBoundary @ref="errorBoundary">
             <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(Modules.Core.Blazor.Layouts.EmptyLayout)">
                         <Authorizing>
                             <h2 style="text-align:center;padding-top:16px;"><Spin /></h2>
@@ -10,7 +9,7 @@
                         <NotAuthorized>
                             @if (context.User.Identity == null)
                             {
-                                <Modules.Core.Blazor.Pages.Components.RedirectToLogin />
+                                <Modules.Core.Blazor.PagesAnonymous.RedirectToLogin />
                             }
                             else
                             {
@@ -18,23 +17,15 @@
                             }
                         </NotAuthorized>
                     </AuthorizeRouteView>
-                    </Modules.Core.Blazor.Layouts.Components.MyErrorBoundary>
-                    @*导航到新页面时，FocusOnNavigate 组件将焦点设置到页面的顶层元素*@
-                    <FocusOnNavigate RouteData="@routeData" Selector="input" />
+            @*导航到新页面时，FocusOnNavigate 组件将焦点设置到页面的顶层元素 input*@
+                    <FocusOnNavigate RouteData="@routeData" Selector="h2" />
                 </Found>
                 <NotFound>
                     <Modules.Core.Blazor.Pages.PageResult._404 />
                 </NotFound>
             </Router>
-            <AntDesign.AntContainer @rendermode="@InteractiveServer" />
+    <AntDesign.AntContainer @rendermode="@renderMode" />
 </CascadingAuthenticationState>
 @code {
-    
-
-        //全局捕获错误，后续页面导航事件中将其重置为非错误状态
-    private ErrorBoundary? errorBoundary;
-    protected override void OnParametersSet()
-    {
-        errorBoundary?.Recover();
-    }
+    private readonly IComponentRenderMode renderMode = new InteractiveServerRenderMode(prerender: false);
 }

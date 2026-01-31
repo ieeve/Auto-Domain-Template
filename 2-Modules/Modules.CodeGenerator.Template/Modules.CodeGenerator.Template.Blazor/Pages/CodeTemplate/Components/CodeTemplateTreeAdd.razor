@@ -1,0 +1,30 @@
+﻿<Form Model="@model"
+      LabelColSpan="8"
+      OnFinish="SubmitForm"
+      WrapperColSpan="16">
+    <Row>
+        <GridCol Span="24">
+            <FormItem Label="@L["父级"]">
+                <CodeTemplateTreeSelect @bind-Value="@context.Parentid"></CodeTemplateTreeSelect>
+            </FormItem>
+            @*
+        代码生成器会覆盖标记之间的内容。*@
+            @*CodeGenerator start*@
+            <FormItem Label="@L["用户名"]">
+                <Input Disabled="!IsAdd" @bind-Value="@context.Id" />
+            </FormItem>
+            <FormItem Label="@L["手机号"]">
+                <AntDesign.Input @bind-Value="@context.Notes" />
+            </FormItem>
+            @*CodeGenerator end*@
+        </GridCol>
+    </Row>
+    <FormItem WrapperColOffset="8" WrapperColSpan="16">
+        <Button Loading="@btnLoading" Disabled="@btnLoading" HtmlType="submit" Type="@ButtonType.Primary">
+            @L["确定"]
+        </Button>
+        <Button OnClick="async () => await ReturnAsync(null)">
+            @L["取消"]
+        </Button>
+    </FormItem>
+</Form>

@@ -3,7 +3,6 @@
 @using Modules.Core.Blazor.Components
 @using Modules.Core.Blazor.Layouts;
 @using Modules.Core.Shared.AntDesign;
-@using Modules.Core.Shared.AppConfig
 
 <h2>创建或更新表结构,可重复生成，系统会对比哪些字段需要添加</h2>
 
@@ -64,7 +63,28 @@
             </Card>
         </ChildContent>
     </Panel>
-    <Panel Header="重工表" Key="4">
+    <Panel Header="机电表" Key="3">
+        <ExtraTemplate>
+            <div @onclick:stopPropagation>
+                <Checkbox @bind-Value="@Entities_ZXJDChecked" OnChange="Entities_ZXJD_CheckChanged">
+                    选择全部
+                </Checkbox>
+            </div>
+        </ExtraTemplate>
+        <ChildContent>
+            <Card>
+                @foreach (var item in Entities_ZXJD)
+                {
+                    <CardGrid Style="width:20%;text-align:center" Hoverable="true">
+                        <Checkbox @bind-Value="item.IsCreate">
+                            @item.EntityName
+                        </Checkbox>
+                    </CardGrid>
+                }
+            </Card>
+        </ChildContent>
+    </Panel>
+@*     <Panel Header="重工表" Key="4">
         <ExtraTemplate>
             <div @onclick:stopPropagation>
                 <Checkbox @bind-Value="@Entities_ZXZGChecked" OnChange="Entities_ZXZG_CheckChanged">
@@ -84,7 +104,8 @@
                 }
             </Card>
         </ChildContent>
-    </Panel>
+    </Panel> *@
+
 </Collapse>
 <br />
 @code {

@@ -1,1 +1,0 @@
-global using Modules.JHW.Repository.Base;

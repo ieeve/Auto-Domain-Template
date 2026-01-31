@@ -1,0 +1,9 @@
+﻿@inherits AntDesign.AntInputComponentBase<string>
+@* ChangeOnSelect="true" 允许只选中父级选项 *@
+<Cascader Placeholder="@Placeholder"
+    AllowClear 
+    ChangeOnSelect="true" 
+    Options="@CascaderData" 
+    @bind-Value="CurrentValue" 
+    SelectedNodesChanged="OnValueChangedHandle">
+</Cascader>

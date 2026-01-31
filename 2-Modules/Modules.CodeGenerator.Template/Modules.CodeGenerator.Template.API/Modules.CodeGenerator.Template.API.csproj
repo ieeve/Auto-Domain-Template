@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Modules.CodeGenerator.Template.AppServices\Modules.CodeGenerator.Template.AppServices.csproj" />
+    <ProjectReference Include="..\Modules.CodeGenerator.Template.Shared\Modules.CodeGenerator.Template.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
