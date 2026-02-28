@@ -63,17 +63,17 @@
             </Card>
         </ChildContent>
     </Panel>
-    <Panel Header="机电表" Key="3">
+    <Panel Header="我的模块表" Key="3">
         <ExtraTemplate>
             <div @onclick:stopPropagation>
-                <Checkbox @bind-Value="@Entities_ZXJDChecked" OnChange="Entities_ZXJD_CheckChanged">
+                <Checkbox @bind-Value="@Entities_MyChecked" OnChange="Entities_My_CheckChanged">
                     选择全部
                 </Checkbox>
             </div>
         </ExtraTemplate>
         <ChildContent>
             <Card>
-                @foreach (var item in Entities_ZXJD)
+                @foreach (var item in Entities_My)
                 {
                     <CardGrid Style="width:20%;text-align:center" Hoverable="true">
                         <Checkbox @bind-Value="item.IsCreate">
@@ -84,28 +84,6 @@
             </Card>
         </ChildContent>
     </Panel>
-@*     <Panel Header="重工表" Key="4">
-        <ExtraTemplate>
-            <div @onclick:stopPropagation>
-                <Checkbox @bind-Value="@Entities_ZXZGChecked" OnChange="Entities_ZXZG_CheckChanged">
-                    选择全部
-                </Checkbox>
-            </div>
-        </ExtraTemplate>
-        <ChildContent>
-            <Card>
-                @foreach (var item in Entities_ZXZG)
-                {
-                    <CardGrid Style="width:20%;text-align:center" Hoverable="true">
-                        <Checkbox @bind-Value="item.IsCreate">
-                            @item.EntityName
-                        </Checkbox>
-                    </CardGrid>
-                }
-            </Card>
-        </ChildContent>
-    </Panel> *@
-
 </Collapse>
 <br />
 @code {

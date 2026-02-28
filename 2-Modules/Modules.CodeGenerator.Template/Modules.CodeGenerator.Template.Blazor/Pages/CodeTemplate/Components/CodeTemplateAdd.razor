@@ -4,14 +4,17 @@
       WrapperColSpan="18">
     <Row>
         @*CodeGenerator start*@
-        <GridCol Span="24">
-            <FormItem Label="@L["用户名"]">
-                <Input Disabled="!IsAdd" @bind-Value="@context.Id" />
-            </FormItem>
-            <FormItem Label="@L["说明"]">
-                <AntDesign.Input @bind-Value="@context.Notes" />
-            </FormItem>
-        </GridCol>
+        @if (EditColumns.Contains("id"))
+        {
+            <GridCol Span="24">
+                <FormItem Label="@L["用户名"]">
+                    <Input Disabled="!IsAdd" @bind-Value="@context.Id" />
+                </FormItem>
+                <FormItem Label="@L["说明"]">
+                    <AntDesign.Input @bind-Value="@context.Notes" />
+                </FormItem>
+            </GridCol>
+        }
         @*CodeGenerator end*@
     </Row>
     <FormItem>

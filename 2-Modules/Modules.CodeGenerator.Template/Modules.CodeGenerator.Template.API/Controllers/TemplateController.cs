@@ -25,7 +25,7 @@ namespace Modules.CodeGenerator.Template.API.Controllers
         //[EndpointDescription("根据ID取得一条数据")]
         public async Task<CodeTemplateVM> GetById(string id)
         {
-            return await _codeTemplateService.QueryVmByIdAsync(id);
+            return await _codeTemplateService.QueryByIdAsync(id);
         }
 
         [HttpPost]

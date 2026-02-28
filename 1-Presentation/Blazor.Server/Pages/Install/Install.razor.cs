@@ -20,8 +20,7 @@ namespace Blazor.Server.Pages.Install
         }
 
         private List<InstallEntityVM> Entities_base = new List<InstallEntityVM>();
-        private List<InstallEntityVM> Entities_ZXJD = new List<InstallEntityVM>();
-        private List<InstallEntityVM> Entities_ZXZG = new List<InstallEntityVM>();
+        private List<InstallEntityVM> Entities_My = new List<InstallEntityVM>();
         private List<InstallEntityVM> Entities_MES_core = new List<InstallEntityVM>();
         protected override async Task OnInitializedAsync()
         {
@@ -32,8 +31,7 @@ namespace Blazor.Server.Pages.Install
         {
             var CoreTypes = service.GetEntityTypeList("Modules.Core.Domain", "Modules.Core.Domain.DbEntity.");
             var TaskTypes = service.GetEntityTypeList("Modules.Tasks.Domain", "Modules.Tasks.Domain.DbEntity.");
-            var ZxjdTypes = service.GetEntityTypeList("Modules.ZXJD.Domain", "Modules.ZXJD.Domain.DbEntity.");
-            var Zxjd_MESTypes = service.GetEntityTypeList("Modules.ZXJD.Domain", "Modules.ZXJD.Domain.MES.DbEntity.");
+            var MyTypes = service.GetEntityTypeList("Modules.My.Domain", "Modules.My.Domain.DbEntity.");
             var MES_CORETypes = service.GetEntityTypeList("Modules.MES.Domain", "Modules.MES.Domain.DbEntity.");
 
             //AllEntityList.Clear();
@@ -42,14 +40,13 @@ namespace Blazor.Server.Pages.Install
                 Entities_base.Add(new InstallEntityVM() { Title = Infrastructure.Common.Utility.StringHelper.TrimEnd(type.Name, "Entity"), IsCreate = false, EntityName = Infrastructure.Common.Utility.StringHelper.TrimEnd(type.Name, "Entity"), EntityType = type });
                 //AllEntityList.Add(new AntDesign_SelectModel() { Data = type, Label = "Core模块:" + Infrastructure.Common.Utility.StringHelper.TrimEnd(type.Name, "Entity"), Value = type.Name, Disabled = false });
             }
-            foreach (var type in ZxjdTypes.Concat(Zxjd_MESTypes))
+            foreach (var type in MyTypes.Concat(MyTypes))
             {
-                Entities_ZXJD.Add(new InstallEntityVM() { Title = Infrastructure.Common.Utility.StringHelper.TrimEnd(type.Name, "Entity"), IsCreate = false, EntityName = Infrastructure.Common.Utility.StringHelper.TrimEnd(type.Name, "Entity"), EntityType = type });
+                Entities_My.Add(new InstallEntityVM() { Title = Infrastructure.Common.Utility.StringHelper.TrimEnd(type.Name, "Entity"), IsCreate = false, EntityName = Infrastructure.Common.Utility.StringHelper.TrimEnd(type.Name, "Entity"), EntityType = type });
             }
             foreach (var type in MES_CORETypes)
             {
                 Entities_MES_core.Add(new InstallEntityVM() { Title = Infrastructure.Common.Utility.StringHelper.TrimEnd(type.Name, "Entity"), IsCreate = false, EntityName = Infrastructure.Common.Utility.StringHelper.TrimEnd(type.Name, "Entity"), EntityType = type });
-                //AllEntityList.Add(new AntDesign_SelectModel() { Data = type, Label = "Zxjd模块:" + Infrastructure.Common.Utility.StringHelper.TrimEnd(type.Name, "Entity"), Value = type.Name, Disabled = false });
             }
 
         }
@@ -64,8 +61,7 @@ namespace Blazor.Server.Pages.Install
             //会自动修改已有表的字段
             List<Type> types = new List<Type>();
             types.AddRange(Entities_base.Where(s => s.IsCreate).Select(s => s.EntityType));
-            types.AddRange(Entities_ZXJD.Where(s => s.IsCreate).Select(s => s.EntityType));
-            types.AddRange(Entities_ZXZG.Where(s => s.IsCreate).Select(s => s.EntityType));
+            types.AddRange(Entities_My.Where(s => s.IsCreate).Select(s => s.EntityType));
             types.AddRange(Entities_MES_core.Where(s => s.IsCreate).Select(s => s.EntityType));
 
             if (types.Count() == 0)
@@ -108,30 +104,16 @@ namespace Blazor.Server.Pages.Install
             //await InvokeAsync(StateHasChanged); //强制刷新
         }
 
-        private bool Entities_ZXJDChecked { get; set; } = false;
-        private void Entities_ZXJD_CheckChanged()
+        private bool Entities_MyChecked { get; set; } = false;
+        private void Entities_My_CheckChanged()
         {
-            if (Entities_ZXJDChecked)
+            if (Entities_MyChecked)
             {
-                this.Entities_ZXJD.ForEach(s => s.IsCreate = true);
+                this.Entities_My.ForEach(s => s.IsCreate = true);
             }
             else
             {
-                this.Entities_ZXJD.ForEach(s => s.IsCreate = false);
-            }
-            //await InvokeAsync(StateHasChanged); //强制刷新
-        }
-
-        private bool Entities_ZXZGChecked { get; set; } = false;
-        private void Entities_ZXZG_CheckChanged()
-        {
-            if (Entities_ZXZGChecked)
-            {
-                this.Entities_ZXZG.ForEach(s => s.IsCreate = true);
-            }
-            else
-            {
-                this.Entities_ZXZG.ForEach(s => s.IsCreate = false);
+                this.Entities_My.ForEach(s => s.IsCreate = false);
             }
             //await InvokeAsync(StateHasChanged); //强制刷新
         }

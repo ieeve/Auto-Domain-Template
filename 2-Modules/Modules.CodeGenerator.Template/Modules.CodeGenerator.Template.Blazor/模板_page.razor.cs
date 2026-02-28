@@ -85,21 +85,21 @@ StateHasChanged 通知UI，状态已经更改，以便UI适时刷新。什么时
                          // await base.OnInitializedAsync();
         }
 
-       private string Old_id;
+        private string Old_id = "";
 
         //*注意：当前类要继承ComponentBase
         protected override async Task OnParametersSetAsync()
         {
-                //** 这里异步 如果Mysql数据库需要CopyNew()强制new出新对象
-                if (!string.IsNullOrWhiteSpace(Id) && this.Id != Old_id)
-                {
-                    this.Old_id = Id;
+            //** 这里异步 如果Mysql数据库需要CopyNew()强制new出新对象
+            if (!string.IsNullOrWhiteSpace(Id) && this.Id != Old_id)
+            {
+                this.Old_id = Id;
 
                 // this.TreeData = await _Service.QueryDataTreeAsync(TenantId); //取得role树
 
                 //StateHasChanged();
                 await InvokeAsync(StateHasChanged); //如果进行了异步操作，需要强制刷新
-                }
+            }
 
             //除非自定义基类与自定义逻辑一起使用，否则不需要调用 base.OnInitializedAsync。
             //await base.OnParametersSetAsync();
@@ -110,7 +110,7 @@ StateHasChanged 通知UI，状态已经更改，以便UI适时刷新。什么时
             if (firstRender)
             {
                 string url = "www.baidu.com";
-                await _jsRuntime.InvokeAsync<object>("open", url, "_blank");
+                await _jsRuntime.InvokeAsync<object>("NavigateTo", url, "_blank"); //修改_blank 为固定值，可使同一地址不重复新窗口
                 await InvokeAsync(StateHasChanged); //如果进行了异步操作，需要强制刷新。
             }
             await base.OnAfterRenderAsync(firstRender);

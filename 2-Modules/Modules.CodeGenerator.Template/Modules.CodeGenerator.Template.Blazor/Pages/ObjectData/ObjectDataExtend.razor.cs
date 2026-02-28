@@ -12,7 +12,6 @@ namespace Modules.CodeGenerator.Template.Blazor.Pages.ObjectData
         [Parameter] public string ObjectId { get; set; }
         //[Inject] private IObjectDataService _Services { get; set; }
         private ObjectDataList REF_TABLE; //@ref 
-        private TableOptions TableOptions { get; set; } = new TableOptions() { IsRadio = AntDesign.SelectionType.Radio }; //设置单选;
         private NameValueCollection AttachWhere { get; set; } = new NameValueCollection();
         private Core.Domain.Base_sys_menu.CurrentMenuModel CurrentMenu = new Core.Domain.Base_sys_menu.CurrentMenuModel();
         //对象表中的列扩展
@@ -23,8 +22,9 @@ namespace Modules.CodeGenerator.Template.Blazor.Pages.ObjectData
             //取得当前用户的菜单及权限
             this.CurrentMenu = _CurrentUserService.MenuModel.GetCurrentMenu(_navigationManager.Uri);
             if (string.IsNullOrWhiteSpace(ObjectId)) ObjectId = "0000000"; //绑定这个页面的对象ID
-                                                                           //Expression<Func<Base_propertyVM, bool>> expression = s => s.Title.Contains("完工");
-                                                                           //TableOptions.AttachWhereClause(expression); //提前附加条件
+
+            //附加where条件，** 注意添加比较符号
+            //AttachWhere.Add("name", "='完工'"); 
 
             TableColumnRander.Add("testint", Column12); //绑定对象的字段名称
 

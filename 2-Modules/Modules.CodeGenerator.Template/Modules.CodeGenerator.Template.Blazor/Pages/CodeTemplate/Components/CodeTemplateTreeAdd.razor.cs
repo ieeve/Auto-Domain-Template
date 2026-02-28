@@ -27,12 +27,12 @@ namespace Modules.CodeGenerator.Template.Blazor.Pages.CodeTemplate.Components
             if (IsAdd)
             {
                 var ret = await _service.AddRowDataAsync(model.DeepClone());
-                if (ret != null) _ = _message.SuccessAsync("保存成功"); _ = _message.SuccessAsync("保存失败");
+                if (ret != null) _ = _message.SuccessAsync("保存成功"); else _ = _message.ErrorAsync("保存失败");
             }
             else
             {
                 var ret = await _service.UpdateRowDataAsync(model);
-                if (ret) _ = _message.SuccessAsync("保存成功"); _ = _message.SuccessAsync("保存失败");
+                if (ret) _ = _message.SuccessAsync("保存成功"); else _ = _message.ErrorAsync("保存失败");
             }
             //给父组件传递参数
             await ReturnAsync(model);//返回

@@ -47,7 +47,9 @@ else
     else
     {
         <Table @ref="AntTable" RowClassName="@(x => x.Data.Row_CSS_Class)"
-               ScrollY="@TableDataModel.TableOptions.ScrollY" Bordered="true"
+               ScrollY="@TableDataModel.TableOptions.ScrollY"
+               ScrollX="@TableDataModel.TableOptions.ScrollX"
+               Bordered="true"
                Resizable
                RowKey="s=>s.Id"
                Size=@TableSize.Small
@@ -83,7 +85,7 @@ else
                 </ActionColumn>
                 @foreach (var column in TableDataModel.ColumnHeaderModels)
                 {
-                    <AntDesign.Column TData="object" Fixed="@((int)column.fixed_col > -1 ? ((ColumnFixPlacement)column.fixed_col) : null)" Hidden="@column.isHidden" HeaderStyle="@("background-color:"+@column.bgcolor)" Width="@column.width.ToString()" Ellipsis="@TableDataModel.TableOptions.Ellipsis" Sortable DataIndex=@($"{column.field}")>
+                    <AntDesign.Column TData="object" Fixed="@((int)column.fixed_col > -1 ? ((ColumnFixPlacement)column.fixed_col) : null)" Hidden="@column.isHidden" HeaderStyle="@("background-color:" + @column.bgcolor)" Width="@column.width.ToString()" Ellipsis="@TableDataModel.TableOptions.Ellipsis" Sortable DataIndex=@($"{column.field}")>
                         <TitleTemplate>
                             <div @onclick:stopPropagation="true">
                                 <Input Placeholder="@column.title" AllowClear="true" @bind-Value="@column.search" OnChange="(e) => OnInputClearChange(e, column.field)" TValue="string" />
@@ -122,7 +124,7 @@ else
        Resizable="@Dialog.Resizable"
        DragInViewport="@Dialog.DragInViewport"
        Footer="null">
-    <CodeTemplateAdd model="@EditRow" IsAdd="@IsAdd" OnValueCallback="OnValueCallback"></CodeTemplateAdd>
+    <CodeTemplateAdd model="@EditRow" ColumnHeaderModels="@TableDataModel.ColumnHeaderModels" IsAdd="@IsAdd" OnValueCallback="OnValueCallback"></CodeTemplateAdd>
 </Modal>
 @*批量修改*@
 <Modal Title="@BatchEditDialog.Title"

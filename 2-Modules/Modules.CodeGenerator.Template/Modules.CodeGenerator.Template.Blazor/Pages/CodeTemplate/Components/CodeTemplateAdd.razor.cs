@@ -1,8 +1,10 @@
-﻿using AntDesign;
+﻿using Amazon.Runtime;
+using AntDesign;
 using Force.DeepCloner;
 using Microsoft.AspNetCore.Components;
 using Modules.CodeGenerator.Template.AppServices.CodeTemplate;
 using Modules.CodeGenerator.Template.Shared.CodeTemplate;
+using Modules.Core.Shared.ObjectDto;
 
 namespace Modules.CodeGenerator.Template.Blazor.Pages.CodeTemplate.Components
 {
@@ -13,13 +15,15 @@ namespace Modules.CodeGenerator.Template.Blazor.Pages.CodeTemplate.Components
         [Inject] private IMessageService _message { get; set; }
         //组件之间传值
         [Parameter] public CodeTemplateVM model { get; set; }
+        [Parameter] public List<ColumnHeaderModel> ColumnHeaderModels { get; set; } = new List<ColumnHeaderModel>();
         [Parameter] public bool IsAdd { get; set; }
         [Parameter] public EventCallback<CodeTemplateVM> OnValueCallback { get; set; }
-
+        private List<string> EditColumns = new List<string>();
         private bool btnLoading = false;
-        protected override async Task OnInitializedAsync()
+        protected override async Task OnParametersSetAsync()
         {
-            await base.OnInitializedAsync();
+            //从对象管理器取得可编辑的列
+            EditColumns = ColumnHeaderModels.Where(x => x.iseditable).Select(x => x.field).ToList();
         }
         private async Task SubmitForm()
         {

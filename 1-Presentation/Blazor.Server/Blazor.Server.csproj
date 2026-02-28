@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoDomain.Modules.MES.Blazor" Version="4.2.16" />
+    <PackageReference Include="AutoDomain.Modules.MES.Blazor" Version="4.2.27" />
     <PackageReference Include="Ocelot.Provider.Consul" Version="24.1.0" />
   </ItemGroup>
 
@@ -61,6 +61,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Config\CoreDbConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="Pages\Dashboard\Dashboard.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
