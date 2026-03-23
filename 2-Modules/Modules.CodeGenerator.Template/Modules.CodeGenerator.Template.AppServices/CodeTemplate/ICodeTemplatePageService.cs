@@ -11,8 +11,8 @@ namespace Modules.CodeGenerator.Template.AppServices.CodeTemplate
         Task<bool> RemoveRowDataAsync(List<CodeTemplateVM> row);
         Task<CodeTemplateVM?> AddRowDataAsync(CodeTemplateVM row);
         Task<bool> AddRowDataAsync(List<CodeTemplateVM> rows);
-        Task<bool> UpdateRowDataAsync(CodeTemplateVM row);
-        Task<bool> UpdateRowDataAsync(List<CodeTemplateVM> rows);
+        Task<bool> UpdateRowDataAsync(CodeTemplateVM afterRow, CodeTemplateVM beforeRow);
+        Task<bool> BatchUpdateRowDataAsync(List<CodeTemplateVM> rows);
         Task InitAsync();
         Task QueryPageTotalCountAsync();
         Task<List<Dictionary<string, object>>> QueryTopPageDataAsync();

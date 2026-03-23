@@ -2,6 +2,7 @@
 
 @using Modules.CodeGenerator.Template.Blazor.Pages.CodeTemplate.Components
 @using Modules.CodeGenerator.Template.Shared.CodeTemplate
+@using Modules.Core.Blazor.Components
 @inherits BasePage
 @attribute [Authorize]
 
@@ -18,6 +19,7 @@ else
             {
                 <Button OnClick="@AddClick" Icon="@IconType.Outline.Plus" Type="ButtonType.Primary">@L["添加"]</Button>
             }
+            <ObjectDataExportExcel ExportDataClick="ExportExcelClick"></ObjectDataExportExcel>
         </GridCol>
 
         <GridCol Span="12">

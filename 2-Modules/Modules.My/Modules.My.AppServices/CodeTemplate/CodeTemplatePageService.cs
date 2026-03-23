@@ -62,7 +62,7 @@ namespace Modules.My.AppServices.CodeTemplate
             //合并用户自定义列
             this.TableDataModel.SetUserColumnsVMs(await user_ColumnsService.GetUerTableColumn(this.TableDataModel.ColumnHeaderModels));
             //配置枚举列
-            this.TableDataModel.EnumDataList = await enum_DataService.GetEnmDataByTableName(TableDataModel.Db_Id, TableDataModel.TableName, TableDataModel.ColumnHeaderModels);
+            this.TableDataModel.EnumDataList = await enum_DataService.QueryByTableName(TableDataModel.Db_Id, TableDataModel.TableName, TableDataModel.ColumnHeaderModels);
         }
 
         #region EXCEL导入导出

@@ -62,7 +62,7 @@ namespace Modules.CodeGenerator.Template.AppServices.CodeTemplate
             //合并用户自定义列
             this.TableDataModel.SetUserColumnsVMs(await user_ColumnsService.GetUerTableColumn(this.TableDataModel.ColumnHeaderModels));
             //配置枚举列
-            this.TableDataModel.EnumDataList = await enum_DataService.GetEnmDataByTableName(TableDataModel.Db_Id, TableDataModel.TableName, TableDataModel.ColumnHeaderModels);
+            this.TableDataModel.EnumDataList = await enum_DataService.QueryByTableName(TableDataModel.Db_Id, TableDataModel.TableName, TableDataModel.ColumnHeaderModels);
         }
 
         #region EXCEL导入导出
@@ -158,22 +158,23 @@ namespace Modules.CodeGenerator.Template.AppServices.CodeTemplate
             }
             return ret > 0;
         }
-        public async Task<bool> UpdateRowDataAsync(CodeTemplateVM row)
+        public async Task<bool> UpdateRowDataAsync(CodeTemplateVM afterRow, CodeTemplateVM beforeRow)
         {
-            row.Updatetime = DateTime.Now;
-            row.Updateuid = _currentUserService.UserModel.Authname;
+            afterRow.Updatetime = DateTime.Now;
+            afterRow.Updateuid = _currentUserService.UserModel.Authname;
             //记录修改日志 不验证，牺牲性能保持读取简单
-            var beforeData = await _repository.QueryByIdAsync(row.Id);
-            bool ret = await _repository.UpdateAsync(_mapper.Map<CodeTemplateEntity>(row));
-            if (ret)
+            var beforeData = _mapper.Map<CodeTemplateEntity>(beforeRow);
+            var afterData = _mapper.Map<CodeTemplateEntity>(afterRow);
+            var ret = await _repository.UpdateOnlyChangedAsync(afterData, beforeData);
+            if (ret > 0)
             {
-                await logService.AddEditLog(ObjectModel.ObjectInfo, DictionaryConverter.ModelToDictionary(beforeData), DictionaryConverter.ModelToDictionary(row));
+                await logService.AddEditLog(ObjectModel.ObjectInfo, DictionaryConverter.ModelToDictionary(beforeData), DictionaryConverter.ModelToDictionary(afterRow));
                 //发送通知事件
-                await objectEventService.Publish_NotifyEvent(ObjectModel.DbInfo.Id, ObjectModel.ObjectInfo.Name_short, ObjectModel.PrimaryName, CONST_object_event.Trigger_type.修改, DictionaryConverter.ModelToDictionary(beforeData), DictionaryConverter.ModelToDictionary(row));
+                await objectEventService.Publish_NotifyEvent(ObjectModel.DbInfo.Id, ObjectModel.ObjectInfo.Name_short, ObjectModel.PrimaryName, CONST_object_event.Trigger_type.修改, DictionaryConverter.ModelToDictionary(beforeData), DictionaryConverter.ModelToDictionary(afterRow));
             }
-            return ret;
+            return ret > 0;
         }
-        public async Task<bool> UpdateRowDataAsync(List<CodeTemplateVM> rows)
+        public async Task<bool> BatchUpdateRowDataAsync(List<CodeTemplateVM> rows)
         {
             foreach (var row in rows)
             {

@@ -19,11 +19,13 @@ namespace Modules.CodeGenerator.Template.Blazor.Pages.CodeTemplate.Components
         [Parameter] public bool IsAdd { get; set; }
         [Parameter] public EventCallback<CodeTemplateVM> OnValueCallback { get; set; }
         private List<string> EditColumns = new List<string>();
+        private CodeTemplateVM beforeModel;
         private bool btnLoading = false;
         protected override async Task OnParametersSetAsync()
         {
             //从对象管理器取得可编辑的列
             EditColumns = ColumnHeaderModels.Where(x => x.iseditable).Select(x => x.field).ToList();
+            beforeModel = model.DeepClone(); //记录初始值，用于取消编辑
         }
         private async Task SubmitForm()
         {
@@ -42,7 +44,7 @@ namespace Modules.CodeGenerator.Template.Blazor.Pages.CodeTemplate.Components
             }
             else
             {
-                var ret = await _service.UpdateRowDataAsync(model);
+                var ret = await _service.UpdateRowDataAsync(model, beforeModel);
                 if (ret)
                 {
                     _ = _message.SuccessAsync("保存成功");

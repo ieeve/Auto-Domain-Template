@@ -2,11 +2,12 @@
 using AntDesign.TableModels;
 using Force.DeepCloner;
 using Microsoft.AspNetCore.Components;
+using Modules.CodeGenerator.Template.AppServices.CodeTemplate;
+using Modules.CodeGenerator.Template.Shared.CodeTemplate;
+using Modules.Core.AppServices.ExcelServer;
 using Modules.Core.Blazor.PageDto;
 using Modules.Core.Domain.DomainServices.AntDesignExt;
 using Modules.Core.Domain.TableModels;
-using Modules.CodeGenerator.Template.AppServices.CodeTemplate;
-using Modules.CodeGenerator.Template.Shared.CodeTemplate;
 using SqlSugar;
 
 namespace Modules.CodeGenerator.Template.Blazor.Pages.CodeTemplate
@@ -123,6 +124,30 @@ namespace Modules.CodeGenerator.Template.Blazor.Pages.CodeTemplate
                     _ = _message.ErrorAsync("删除失败。");
                 }
             }
+        }
+        #endregion
+        #region 导入导出excel
+        [Inject] private ExportExcelObjectData excelService { get; set; }
+        async Task ExportExcelClick(bool IsAllData)
+        {
+            string key = $"updatable-{DateTime.Now.Ticks}";
+            var config = new MessageConfig()
+            {
+                Content = "正在导出,请稍后...",
+                Key = key
+            };
+            if (IsAllData)
+            {
+                await excelService.ExportData(TableModel.DataSource);
+            }
+            else
+            {
+                var data = TableModel.DataSource.Skip((TableModel.PageIndex - 1) * TableModel.PageSize).Take(TableModel.PageSize).ToList();
+                await excelService.ExportData(data);
+            }
+            config.Content = "导出完毕。";
+            config.Duration = 2;
+            await _message.SuccessAsync(config);
         }
         #endregion
     }
