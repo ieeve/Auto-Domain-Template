@@ -1,4 +1,4 @@
-﻿using Modules.Core.Domain.Interfaces;
+﻿
 
 namespace Modules.CodeGenerator.Template.Domain.Base
 {

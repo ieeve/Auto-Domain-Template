@@ -13,6 +13,8 @@ namespace Modules.CodeGenerator.Template.Shared.CodeTemplate
         [DisplayName("密码")]
         [Required(ErrorMessage = "密码不能为空")]
         public string Password { get; set; }
+        [DisplayName("状态")]
+        public string State { get; set; }
         [DisplayName("说明")]
         public string Notes { get; set; }
         //CodeGenerator end
