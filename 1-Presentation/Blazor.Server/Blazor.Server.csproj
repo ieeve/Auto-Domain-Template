@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoDomain.Modules.MES.Blazor" Version="4.2.39" />
+    <PackageReference Include="AutoDomain.Modules.MES.Blazor" Version="4.2.47" />
     <PackageReference Include="Ocelot.Provider.Consul" Version="24.1.0" />
   </ItemGroup>
 
