@@ -160,10 +160,10 @@ namespace Modules.CodeGenerator.Template.Blazor.Pages.CodeTemplate
         }
 
         //excel导入后刷新数据
-        private async Task ImportDataCallbackAsync(int val)
+        private async Task ImportDataCallbackAsync(List<Dictionary<string, object>> val)
         {
             await FetchPageDataAsync();
-            ObjViewDataModel.DictData.TotalCount += val; //前端数量增加
+            ObjViewDataModel.DictData.TotalCount += val.Count; //前端数量增加
         }
         #endregion
 

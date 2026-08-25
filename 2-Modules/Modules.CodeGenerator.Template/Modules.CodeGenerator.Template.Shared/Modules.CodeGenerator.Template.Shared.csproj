@@ -17,7 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoDomain.Modules.MES.Blazor" Version="4.2.96" />
+    <PackageReference Include="AutoDomain.Modules.MES.Blazor" Version="4.3.54" />
   </ItemGroup>
 
   <ItemGroup>

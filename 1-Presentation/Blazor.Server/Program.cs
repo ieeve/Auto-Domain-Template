@@ -1,6 +1,5 @@
 using Blazor.Server;
 using Microsoft.AspNetCore.Hosting.StaticWebAssets;
-using Modules.CodeGenerator.AppServices;
 using Modules.Core.AppServices;
 using Modules.Core.Blazor;
 using Modules.MES.AppServices;
@@ -25,7 +24,7 @@ StaticWebAssetsLoader.UseStaticWebAssets(builder.Environment, builder.Configurat
 builder.Services.AddCoreModules(builder.Configuration); //核心模块
 builder.Services.AddTaskModules(builder.Configuration); //任务模块
 builder.Services.AddMesModules(builder.Configuration); //核心MES模块
-builder.Services.AddCodeGeneratorModules(builder.Configuration); //代码生成模块
+//builder.Services.AddCodeGeneratorModules(builder.Configuration); //代码生成模块
 builder.Services.AddMyModules(builder.Configuration); //我的模块
 #endregion
 

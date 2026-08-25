@@ -93,10 +93,10 @@ namespace Modules.My.Blazor.Pages.CodeTemplate
 
         #region 导入导出excel
         [Inject] private ExportExcelObjectData excelService { get; set; }
-        private async Task ImportDataCallbackAsync(int val)
+        private async Task ImportDataCallbackAsync(List<Dictionary<string, object>> val)
         {
             await FetchPageDataAsync();
-            TableDataModel.TableModel.TotalCount += val; //前端数量增加
+            TableDataModel.TableModel.TotalCount += val.Count; //前端数量增加
         }
         async Task ExportExcelClick(bool IsAllData)
         {
